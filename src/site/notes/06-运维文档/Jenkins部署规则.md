@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/06/jenkins/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/06/jenkins/","dg-note-properties":{"permalink":"/jenkins-deploy/"}}
 ---
 
 # Jenkins 部署规则

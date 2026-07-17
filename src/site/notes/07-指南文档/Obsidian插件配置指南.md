@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/07/obsidian/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/07/obsidian/","dg-note-properties":{"permalink":"/obsidian-guide/"}}
 ---
 
 # Obsidian插件配置指南

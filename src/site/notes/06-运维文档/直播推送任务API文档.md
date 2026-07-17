@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/06/api/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/06/api/","dg-note-properties":{"permalink":"/live-push-api/"}}
 ---
 
 # 直播推送任务API文档

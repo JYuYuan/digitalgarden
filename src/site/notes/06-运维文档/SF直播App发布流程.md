@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/06/sf-app/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/06/sf-app/","dg-note-properties":{"permalink":"/sf-app-release/"}}
 ---
 
 # SF直播App发布流程
