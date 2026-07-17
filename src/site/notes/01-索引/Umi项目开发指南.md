@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01/umi/","dg-note-properties":{}}
+{"dg-publish":true,"dg-permalink":"umi-project-guide","permalink":"/umi-project-guide/","dg-note-properties":{}}
 ---
 
 # Umi项目开发指南

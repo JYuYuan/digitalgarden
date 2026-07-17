@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/06/git/","dg-note-properties":{"permalink":"/git-branching/"}}
+{"dg-publish":true,"dg-permalink":"git-branching","permalink":"/git-branching/","dg-note-properties":{"permalink":"/git-branching/"}}
 ---
 
 # Git 分支规范

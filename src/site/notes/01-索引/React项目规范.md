@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01/react/","dg-note-properties":{}}
+{"dg-publish":true,"dg-permalink":"react-project-standards","permalink":"/react-project-standards/","dg-note-properties":{}}
 ---
 
 # React项目规范
