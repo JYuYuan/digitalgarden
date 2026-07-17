@@ -6,25 +6,19 @@
 
 > 客情报表系统 - 基于 UmiJS Max 4 + React 18 + Ant Design 5 + AntV 数据可视化的企业级报表分析平台
 
-## 📋 项目信息
+## 项目信息
 
 - **项目名称**：jnc-report-web
 - **项目类型**：Web 前端应用
 - **业务领域**：客情报表分析、数据可视化
 - **开发状态**：#维护中
 - **技术负责人**：dompling
-- **项目路径**：`/Users/dompling/WebstormProjects/Work/jnc-report-web`
+- **项目路径**：`<工作区>/jnc-report-web`
 - **仓库类型**：私有仓库
 
 ---
 
-## 🚀 快速启动
-
-```cardlink
-url: /Users/dompling/WebstormProjects/Work/jnc-report-web
-title: 快速启动指南
-description: 环境要求 & 开发命令
-```
+## 快速启动
 
 ### 环境要求
 
@@ -55,7 +49,7 @@ npm install
 
 ---
 
-## 🛠️ 技术栈
+## 技术栈
 
 ### 核心框架
 
@@ -134,7 +128,7 @@ npm install
 
 ---
 
-## 📁 项目结构
+## 项目结构
 
 ```
 jnc-report-web/
@@ -213,7 +207,7 @@ jnc-report-web/
 
 ---
 
-## 🎯 核心功能模块
+## 核心功能模块
 
 ### 1. 首页 Dashboard
 - 路径：`/home`
@@ -237,7 +231,7 @@ jnc-report-web/
 
 ---
 
-## 🏗️ 架构特性
+## 架构特性
 
 ### 1. UmiJS Max 企业级特性
 - **约定式路由**：基于文件系统的路由自动生成
@@ -272,7 +266,7 @@ jnc-report-web/
 
 ---
 
-## 📊 数据可视化能力
+## 数据可视化能力
 
 ### AntV 生态集成
 1. **G2 图表引擎**：折线图、柱状图、饼图等基础图表
@@ -285,7 +279,7 @@ jnc-report-web/
 
 ---
 
-## 🔧 自定义组件库
+## 自定义组件库
 
 ### ProTable（增强表格）
 - 基于 Ant Design ProTable 二次封装
@@ -310,7 +304,7 @@ jnc-report-web/
 
 ---
 
-## 🚀 CI/CD
+## CI/CD
 
 ### Jenkins Pipeline
 - **Pipeline 库**：`shared-pipeline-library`
@@ -324,7 +318,7 @@ jnc-report-web/
 
 ---
 
-## 📝 开发规范
+## 开发规范
 
 ### 代码质量
 - **ESLint**：代码规范检查
@@ -344,20 +338,20 @@ jnc-report-web/
 
 ---
 
-## 🔗 关联项目
+## 关联项目
 
 - [[02-Web端项目/jnc-bigdata-mgt-web\|jnc-bigdata-mgt-web]] - 数据管理平台（共享 API 基础设施）
 - [[02-Web端项目/jnc-audit-web\|jnc-audit-web]] - 审计系统
 
 ---
 
-## 📌 标签
+## 标签
 
 #前端 #Web端 #React-18 #UmiJS-Max #UmiJS-4 #AntDesign-5 #AntDesignPro #TypeScript #AntV #数据可视化 #报表系统 #客情分析 #企业级应用 #维护中
 
 ---
 
-## 📅 最后更新
+## 最后更新
 
 - **文档创建时间**：2026-06-15
 - **最后修改时间**：2026-06-16
@@ -365,7 +359,7 @@ jnc-report-web/
 
 ---
 
-## 💡 备注
+## 备注
 
 1. **项目亮点**：
    - 完整的客情报表分析体系（概览 → 进展 → 申诉 → 时效 → 明细）
@@ -383,7 +377,7 @@ jnc-report-web/
 
 ---
 
-## 🔍 快速查找
+## 快速查找
 
 - **路由配置**：`config/routes/`
 - **API 服务**：`src/services/`

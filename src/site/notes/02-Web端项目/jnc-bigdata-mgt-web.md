@@ -6,24 +6,18 @@
 
 > 数据管理平台 - 基于 UmiJS Max 4 + React 18 + Ant Design 5 构建的企业级数据管理平台
 
-## 📋 项目信息
+## 项目信息
 
 - **项目名称**：jnc-bigdata-mgt-web
 - **项目类型**：Web 前端应用
 - **开发状态**：#维护中
 - **技术负责人**：dompling
-- **项目路径**：`/Users/dompling/WebstormProjects/Work/jnc-bigdata-mgt-web`
+- **项目路径**：`<工作区>/jnc-bigdata-mgt-web`
 - **仓库类型**：私有仓库
 
 ---
 
-## 🚀 快速启动
-
-```cardlink
-url: /Users/dompling/WebstormProjects/Work/jnc-bigdata-mgt-web
-title: 快速启动指南
-description: 环境要求 & 开发命令
-```
+## 快速启动
 
 ### 环境要求
 
@@ -54,7 +48,7 @@ npm install
 
 ---
 
-## 🛠️ 技术栈
+## 技术栈
 
 ### 核心技术
 
@@ -81,7 +75,7 @@ npm install
 
 ---
 
-## 📂 项目结构
+## 项目结构
 
 ```
 jnc-bigdata-mgt-web/
@@ -130,7 +124,7 @@ jnc-bigdata-mgt-web/
 
 ---
 
-## 🎯 核心功能模块
+## 核心功能模块
 
 ### API Gateway 数据网关
 
@@ -164,7 +158,7 @@ API Gateway 前端入口统一挂在 `/api-gateway` 路径下：
 
 ---
 
-## 🌍 环境配置
+## 环境配置
 
 ### 环境切换
 
@@ -188,7 +182,7 @@ UMI_ENV=product    # 生产环境
 
 ---
 
-## 🔧 技术特性
+## 技术特性
 
 ### 1. Keep Alive 页面缓存
 - 使用 `react-activation` 实现页面状态保持
@@ -212,7 +206,7 @@ UMI_ENV=product    # 生产环境
 
 ---
 
-## 📦 相关文档
+## 相关文档
 
 - [UmiJS 官方文档](https://umijs.org/)
 - [Ant Design 官方文档](https://ant.design/)
@@ -222,14 +216,14 @@ UMI_ENV=product    # 生产环境
 
 ---
 
-## 🔗 相关项目
+## 相关项目
 
 - [[02-Web端项目/jnc-report-web\|jnc-report-web]] - 报表系统
 - [[02-Web端项目/andromeda-web\|andromeda-web]] - 待补充关联
 
 ---
 
-## 📅 更新日志
+## 更新日志
 
 | 日期 | 版本 | 描述 |
 |------|------|------|
@@ -238,7 +232,7 @@ UMI_ENV=product    # 生产环境
 
 ---
 
-## 🔖 标签
+## 标签
 
 #前端 #Web端 #React-18 #UmiJS-Max #UmiJS-4 #AntDesign-5 #AntDesignPro #TypeScript #大数据 #数据管理 #API网关 #企业级应用 #维护中
 

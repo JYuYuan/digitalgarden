@@ -8,7 +8,7 @@
 
 ---
 
-## 🌿 标准分支结构
+## 标准分支结构
 
 ### 三大主分支
 
@@ -25,7 +25,7 @@ prod_release  # 生产环境分支
 
 ---
 
-## 📋 分支命名规范
+## 分支命名规范
 
 ### 功能分支命名
 
@@ -47,16 +47,18 @@ wh/订单列表优化         # 王慧优化订单列表
 
 **命名示例：**
 ```
-✅ jyy/用户登录功能
-✅ lm/支付金额修复
-✅ wh/订单管理模块
+# 推荐
+jyy/用户登录功能
+lm/支付金额修复
+wh/订单管理模块
 
-❌ jiangyangyang/用户登录  # 拼音太长
-❌ jyy/user-login         # 不要用英文
-❌ JYY/用户登录           # 不要用大写
+# 不推荐
+jiangyangyang/用户登录  # 拼音太长
+jyy/user-login         # 不要用英文
+JYY/用户登录           # 不要用大写
 ```
 
-## 🔄 分支创建规则
+## 分支创建规则
 
 ### 核心原则
 
@@ -93,14 +95,14 @@ git push origin lm/相机修复
 ```
 
 **为什么从生产分支创建？**
-- ✅ 确保代码基于最稳定版本
-- ✅ 避免包含其他开发中的功能
-- ✅ 减少合并冲突
-- ✅ 保证代码质量
+- 确保代码基于最稳定版本
+- 避免包含其他开发中的功能
+- 减少合并冲突
+- 保证代码质量
 
 ---
 
-## 🔀 完整工作流程
+## 完整工作流程
 
 ### 开发流程（包含 Commit 合并）
 
@@ -123,7 +125,7 @@ git commit -m "fix: 修复登录验证逻辑"
 # 3. 推送到远程
 git push origin jyy/用户登录功能
 
-# 4. 发版前：合并多个 commit 为一个 ⚠️ 重要步骤
+# 4. 发版前：合并多个 commit 为一个 重要步骤
 # 方式 1：使用 IDE（推荐）
 # - WebStorm/IDEA: 右键 commit → Interactively Rebase from Here
 # - 选择多个 commit → Squash 合并为一个
@@ -165,10 +167,10 @@ git push origin --delete jyy/用户登录功能
 ### 为什么要合并 Commit？
 
 **目的：**
-1. ✅ **便于发版登记** - 一个 commit 清晰记录整个需求
-2. ✅ **统计受影响文件** - 一次性查看所有变更文件
-3. ✅ **简化历史记录** - 避免过多的中间提交
-4. ✅ **方便回滚** - 整个需求作为一个单元
+1. **便于发版登记** - 一个 commit 清晰记录整个需求
+2. **统计受影响文件** - 一次性查看所有变更文件
+3. **简化历史记录** - 避免过多的中间提交
+4. **方便回滚** - 整个需求作为一个单元
 
 **示例对比：**
 
@@ -199,7 +201,7 @@ feat: 用户登录功能
 
 ---
 
-## 📊 分支流转图
+## 分支流转图
 
 ### 标准项目
 
@@ -208,7 +210,7 @@ prod_release (生产)
     ↓ 创建功能分支
 jyy/用户登录功能 (功能开发)
     ↓ 开发完成（多次 commit）
-    ↓ 合并 commit 为一个 ⚠️
+    ↓ 合并 commit 为一个 
     ↓ 合并到
 dev (开发环境测试)
     ↓ 测试通过
@@ -228,7 +230,7 @@ sf_release (生产)
     ↓ 创建功能分支
 lm/相机修复 (功能开发)
     ↓ 开发完成（多次 commit）
-    ↓ 合并 commit 为一个 ⚠️
+    ↓ 合并 commit 为一个 
     ↓ 合并到
 sf_uat (UAT 测试)
     ↓ 测试通过
@@ -245,9 +247,9 @@ prod_release (生产)
     ↓ 创建功能分支
 wh/订单模块 (功能开发)
     ↓ 开发完成（多次 commit）
-    ↓ 合并 commit 为一个 ⚠️
+    ↓ 合并 commit 为一个 
     ↓ 合并到
-master (开发环境测试) ⚠️ 注意：master 是开发分支
+master (开发环境测试) 注意：master 是开发分支
     ↓ 测试通过
     ↓ 合并到
 uat (UAT 测试)
@@ -258,21 +260,21 @@ prod_release (发布生产)
 
 ---
 
-## 📊 项目分支对照表
+## 项目分支对照表
 
 | 项目 | 开发分支 | UAT 分支 | 生产分支 | 创建分支来源 |
 |------|---------|----------|----------|------------|
 | 标准项目 | `dev` | `uat` | `prod_release` | `prod_release` |
 | TPM 证据审计 Android | - | `sf_uat` | `sf_release` | `sf_release` |
-| DMS Web | `master` ⚠️ | `uat` | `prod_release` | `prod_release` |
+| DMS Web | `master` | `uat` | `prod_release` | `prod_release` |
 
 **注意：**
-- ⚠️ DMS Web 的 `master` 是**开发分支**，不是生产分支
+- DMS Web 的 `master` 是**开发分支**，不是生产分支
 - 所有功能分支都从**生产分支**创建（`prod_release` 或 `sf_release`）
 
 ---
 
-## 🎯 不同场景的分支管理
+## 不同场景的分支管理
 
 ### 场景 1：新功能开发（含 Commit 合并）
 
@@ -361,7 +363,7 @@ git merge ls/order-detail
 
 ---
 
-## ⚠️ 特殊说明
+## 特殊说明
 
 ### 特定项目的分支差异
 
@@ -426,7 +428,7 @@ origin/prod_release
 
 ---
 
-## 📋 分支管理最佳实践
+## 分支管理最佳实践
 
 ### 提交规范
 
@@ -490,48 +492,48 @@ git fetch -p
 
 ---
 
-## 🚨 注意事项
+## 注意事项
 
 ### 禁止操作
 
-1. **❌ 不要直接在主分支上开发**
+1. **不要直接在主分支上开发**
    ```bash
    # 错误示例
    git checkout dev
    # 直接修改代码并提交
    ```
 
-2. **❌ 不要从 dev 或 uat 创建功能分支**
+2. **不要从 dev 或 uat 创建功能分支**
    ```bash
    # 错误示例
    git checkout dev
-   git checkout -b zs/new-feature  # ❌ 不要这样做
+   git checkout -b zs/new-feature  # 不要这样做
    ```
 
-3. **❌ 不要强制推送主分支**
+3. **不要强制推送主分支**
    ```bash
    # 错误示例
-   git push -f origin prod_release  # ❌ 禁止
+   git push -f origin prod_release  # 禁止
    ```
 
-4. **❌ 不要删除主分支**
+4. **不要删除主分支**
    ```bash
    # 错误示例
-   git branch -D prod_release  # ❌ 禁止
+   git branch -D prod_release  # 禁止
    ```
 
 ---
 
 ### 必做操作
 
-1. **✅ 合并前先拉取最新代码**
+1. **合并前先拉取最新代码**
    ```bash
    git checkout dev
    git pull origin dev
    git merge zs/user-login
    ```
 
-2. **✅ 推送前先提交所有更改**
+2. **推送前先提交所有更改**
    ```bash
    git status  # 检查状态
    git add .
@@ -539,7 +541,7 @@ git fetch -p
    git push
    ```
 
-3. **✅ 遇到冲突及时解决**
+3. **遇到冲突及时解决**
    ```bash
    # 出现冲突时
    git status              # 查看冲突文件
@@ -550,7 +552,7 @@ git fetch -p
 
 ---
 
-## 🔗 相关文档
+## 相关文档
 
 - [[06-运维文档/Jenkins部署规则\|Jenkins部署规则]] - Jenkins 部署规则
 - [[06-运维文档/SF直播App发布流程\|SF直播App发布流程]] - 移动端发布流程
@@ -559,7 +561,7 @@ git fetch -p
 
 ---
 
-## 🔖 标签
+## 标签
 
 #Git #分支管理 #开发规范 #版本控制
 

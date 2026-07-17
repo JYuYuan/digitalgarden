@@ -6,22 +6,22 @@
 
 > 直播审核系统第三方接入对接文档站点，基于 VuePress 1.x 构建
 
-## 📋 项目信息
+## 项目信息
 
 - **项目名称**：liveup-doc
 - **项目类型**：技术文档站点
 - **开发状态**：#维护中
 - **技术负责人**：待填写
-- **项目路径**：`/Users/dompling/WebstormProjects/Work/liveup-doc`
+- **项目路径**：`<工作区>/liveup-doc`
 - **访问路径**：`/live-docs/`
 
 ---
 
-## 🚀 快速启动
+## 快速启动
 
 ### 安装依赖
 ```bash
-cd /Users/dompling/WebstormProjects/Work/liveup-doc
+cd "${WORK_ROOT:?请先设置 WORK_ROOT}/liveup-doc"
 yarn install
 ```
 
@@ -46,7 +46,7 @@ npm run deploy
 
 ---
 
-## 🛠️ 技术栈
+## 技术栈
 
 ### 核心技术
 
@@ -65,7 +65,7 @@ npm run deploy
 
 ---
 
-## 📂 项目结构
+## 项目结构
 
 ```
 liveup-doc/
@@ -91,7 +91,7 @@ liveup-doc/
 
 ---
 
-## 📝 文档内容
+## 文档内容
 
 ### VuePress 配置
 
@@ -163,7 +163,7 @@ liveup-doc/
 
 ---
 
-## 🔧 开发规范
+## 开发规范
 
 ### 文档编写规范
 
@@ -185,7 +185,7 @@ liveup-doc/
 
 ---
 
-## ⚠️ 注意事项
+## 注意事项
 
 1. **签名机制**: 所有 API 请求需要在 Header 中携带 `timestamp`、`sign`、`appKey`
 2. **环境隔离**: `appKey`、`appSecret`、`businessRelCode` 在每个环境独立申请
@@ -194,7 +194,7 @@ liveup-doc/
 
 ---
 
-## 📅 更新日志
+## 更新日志
 
 | 日期 | 版本 | 描述 |
 |------|------|------|
@@ -204,7 +204,7 @@ liveup-doc/
 
 ---
 
-## 🔖 标签
+## 标签
 
 #文档项目 #文档站点 #VuePress #直播审核 #API文档 #维护中
 

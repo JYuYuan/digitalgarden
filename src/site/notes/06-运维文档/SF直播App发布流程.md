@@ -8,7 +8,7 @@
 
 ---
 
-## 🔐 环境账号信息
+## 环境账号信息
 
 ### 生产环境（Production）
 
@@ -36,15 +36,15 @@ https://sf-uat.jncapp.com/banquet/login/index
 
 ---
 
-## 📱 发布流程
+## 发布流程
 
-### 步骤 0：修改版本号（发版前必做）⚠️
+### 步骤 0：修改版本号（发版前必做）
 
 **重要：** 每次发版前必须先修改 Android 项目的版本号！
 
 **文件位置：**
 ```
-/Users/dompling/WebstormProjects/Work/tpm-evidence-audit-android/sf.gradle
+<工作区>/tpm-evidence-audit-android/sf.gradle
 ```
 
 **修改内容：**
@@ -76,10 +76,10 @@ build_versions.version_name = "1.0.12" // 从 1.0.11 改为 1.0.12
 ```
 
 **注意事项：**
-- ⚠️ `version_code` 必须是纯数字
-- ⚠️ `version_code` 必须递增（不能回退）
-- ⚠️ `version_name` 通常格式为 "主版本.次版本.修订号"
-- ⚠️ JAR 包文件名 = `version_code.jar`（如 12.jar）
+- `version_code` 必须是纯数字
+- `version_code` 必须递增（不能回退）
+- `version_name` 通常格式为 "主版本.次版本.修订号"
+- JAR 包文件名 = `version_code.jar`（如 12.jar）
 
 **检查清单：**
 - [ ] 已修改 `build_versions.version_code`
@@ -119,8 +119,8 @@ git push origin master --tags
 
 **打包命令（Android/RePlugin）：**
 ```bash
-cd /Users/dompling/WebstormProjects/Work/tpm-evidence-audit-android
-JAVA_HOME=/Users/dompling/Library/Java/JavaVirtualMachines/corretto-1.8.0_412/Contents/Home ./gradlew :app:assembleRelease
+cd "${WORK_ROOT:?请先设置 WORK_ROOT}/tpm-evidence-audit-android"
+JAVA_HOME="${JAVA_HOME:?请先配置 JDK 8 的 JAVA_HOME}" ./gradlew :app:assembleRelease
 ```
 
 **打包产物：**
@@ -148,22 +148,22 @@ app/build/outputs/apk/release/14.jar
 ```
 
 **注意事项：**
-- ⚠️ 文件必须是 `.jar` 格式
-- ⚠️ 文件名必须是纯数字（版本号）
-- ⚠️ 版本号必须递增
-- ⚠️ 上传文件必须使用 `app/build/outputs/apk/release/` 下的 release 产物
+- 文件必须是 `.jar` 格式
+- 文件名必须是纯数字（版本号）
+- 版本号必须递增
+- 上传文件必须使用 `app/build/outputs/apk/release/` 下的 release 产物
 
 **示例：**
 ```bash
 # 正确的命名
-11.jar  ✅
-12.jar  ✅
-13.jar  ✅
+11.jar  # 正确
+12.jar  # 正确
+13.jar  # 正确
 
 # 错误的命名
-v11.jar      ❌ 不能有字母前缀
-11.0.jar     ❌ 不能有小数点
-app-11.jar   ❌ 不能有其他字符
+v11.jar      # 错误：不能有字母前缀
+11.0.jar     # 错误：不能有小数点
+app-11.jar   # 错误：不能有其他字符
 ```
 
 ---
@@ -194,7 +194,7 @@ app-11.jar   ❌ 不能有其他字符
 
 ---
 
-## 📋 完整操作示例
+## 完整操作示例
 
 ### UAT 环境发布示例
 
@@ -250,7 +250,7 @@ app-11.jar   ❌ 不能有其他字符
 
 ---
 
-## 🎯 版本号管理规则
+## 版本号管理规则
 
 ### 版本号递增规则
 
@@ -283,7 +283,7 @@ UAT 环境当前版本：5
 
 ---
 
-## 🚨 常见问题
+## 常见问题
 
 ### 问题 1：版本号填错了
 
@@ -354,7 +354,7 @@ UAT 环境当前版本：5
 
 ---
 
-## ✅ 发布检查清单
+## 发布检查清单
 
 ### 发布前检查
 
@@ -383,7 +383,7 @@ UAT 环境当前版本：5
 
 ---
 
-## 📝 快速参考
+## 快速参考
 
 ### 一图流程
 
@@ -394,7 +394,7 @@ UAT 环境当前版本：5
   plugin_version = version_code
         ↓
 执行打包命令
-  JAVA_HOME=/Users/dompling/Library/Java/JavaVirtualMachines/corretto-1.8.0_412/Contents/Home ./gradlew :app:assembleRelease
+  JAVA_HOME="${JAVA_HOME:?请先配置 JDK 8 的 JAVA_HOME}" ./gradlew :app:assembleRelease
         ↓
 生成 JAR 包 (app/build/outputs/apk/release/14.jar)
         ↓
@@ -412,7 +412,7 @@ UAT 环境当前版本：5
         ↓
 点击【确认】
         ↓
-✅ 发布完成
+发布完成
 ```
 
 ### 环境对照表
@@ -424,7 +424,7 @@ UAT 环境当前版本：5
 
 ---
 
-## 🔗 相关文档
+## 相关文档
 
 - [[06-运维文档/Jenkins部署规则\|Jenkins部署规则]] - Jenkins 发布规则
 - [[07-指南文档/优化工作流程指南\|优化工作流程指南]] - 日常工作流程
@@ -432,7 +432,7 @@ UAT 环境当前版本：5
 
 ---
 
-## 🔖 标签
+## 标签
 
 #SF直播 #直播App #发布流程 #UAT #生产环境 #版本管理 #JAR包
 

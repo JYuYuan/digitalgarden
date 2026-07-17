@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Jenkinsfile 配置说明
+## Jenkinsfile 配置说明
 
 ### 示例配置
 
@@ -40,23 +40,23 @@ ReactCI {
 
 ---
 
-## 🔑 核心参数说明
+## 核心参数说明
 
 ### 基础配置
 
 | 参数 | 说明 | 示例 | 必填 |
 |------|------|------|------|
-| `jenkins_node` | Jenkins 构建节点 | `'k8s-agent-react'` | ✅ |
-| `k8s_namespace` | K8s 命名空间 | `'sac-dev'` | ✅ |
-| `k8s_application_name` | K8s 应用名称 | `'jnc-security-sac-frontend'` | ✅ |
-| `replicas` | Pod 副本数 | `'1'` | ✅ |
-| `feature_branch_name` | **允许强制发版的分支** | `'dev'` | ✅ |
-| `build_script` | Node 构建命令 | `'build'` 或 `'build:dev'` | ❌ |
-| `node_version` | Node 版本 | `'16.14.2'` | ❌ |
+| `jenkins_node` | Jenkins 构建节点 | `'k8s-agent-react'` | 是 |
+| `k8s_namespace` | K8s 命名空间 | `'sac-dev'` | 是 |
+| `k8s_application_name` | K8s 应用名称 | `'jnc-security-sac-frontend'` | 是 |
+| `replicas` | Pod 副本数 | `'1'` | 是 |
+| `feature_branch_name` | **允许强制发版的分支** | `'dev'` | 是 |
+| `build_script` | Node 构建命令 | `'build'` 或 `'build:dev'` | 否 |
+| `node_version` | Node 版本 | `'16.14.2'` | 否 |
 
 **说明：**
-- ✅ 必填参数
-- ❌ 可选参数（有默认值）
+- “是”表示必填参数
+- “否”表示可选参数，未配置时使用默认值
 
 ### 参数详细说明
 
@@ -78,7 +78,7 @@ ReactCI {
 
 ---
 
-## 🔑 部署规则
+## 部署规则
 
 ### 规则 1：feature_branch_name 强制发版
 
@@ -90,9 +90,9 @@ feature_branch_name = 'dev'
 ```
 
 **行为：**
-- 当前分支是 `dev` → ✅ 允许部署到 `sac-dev` 命名空间
-- 当前分支是 `master` / `main` → ✅ 允许部署（标准分支）
-- 当前分支是 `feature/xxx` → ❌ 不允许部署（除非配置为 feature_branch_name）
+- 当前分支是 `dev` → 允许部署到 `sac-dev` 命名空间
+- 当前分支是 `master` / `main` → 允许部署（标准分支）
+- 当前分支是 `feature/xxx` → 不允许部署（除非配置为 feature_branch_name）
 
 **使用场景：**
 ```groovy
@@ -122,13 +122,13 @@ uat/feature
 ```
 
 **行为：**
-- ✅ 执行构建（npm run build）
-- ❌ 不推送镜像（docker push）
-- ❌ 不部署到 K8s（kubectl apply）
+- 执行构建（npm run build）
+- 不推送镜像（docker push）
+- 不部署到 K8s（kubectl apply）
 
 ---
 
-## 🎯 常见配置示例
+## 常见配置示例
 
 ### 开发环境
 
@@ -214,22 +214,22 @@ ReactCI {
 
 ---
 
-## 📊 分支部署行为
+## 分支部署行为
 
 | 分支名 | feature_branch_name 配置 | 是否部署 |
 |--------|-------------------------|---------|
-| `dev` | `'dev'` | ✅ 部署 |
-| `master` | 任意 | ✅ 部署（标准分支） |
-| `feature/xxx` | `'dev'` | ❌ 不部署 |
-| `feature/xxx` | `'feature/xxx'` | ✅ 部署 |
-| `uat` | 任意 | ❌ 只构建不部署 |
-| `uat/xxx` | 任意 | ❌ 只构建不部署 |
-| `prod_release` | 任意 | ❌ 只构建不部署 |
-| `uat_release` | 任意 | ❌ 只构建不部署 |
+| `dev` | `'dev'` | 部署 |
+| `master` | 任意 | 部署（标准分支） |
+| `feature/xxx` | `'dev'` | 不部署 |
+| `feature/xxx` | `'feature/xxx'` | 部署 |
+| `uat` | 任意 | 只构建不部署 |
+| `uat/xxx` | 任意 | 只构建不部署 |
+| `prod_release` | 任意 | 只构建不部署 |
+| `uat_release` | 任意 | 只构建不部署 |
 
 ---
 
-## 💡 实际使用流程
+## 实际使用流程
 
 ### 流程 1：修改部署分支
 
@@ -298,8 +298,8 @@ git checkout -b prod_release
 git push origin prod_release
 
 // 3. Jenkins 自动触发
-// ✅ 执行构建
-// ❌ 不部署
+// 执行构建
+// 不部署
 
 // 4. 验证构建产物
 // 5. 确认无误后合并到 master
@@ -311,12 +311,12 @@ git push origin master
 
 ---
 
-## ⚠️ 注意事项
+## 注意事项
 
 1. **feature_branch_name 必须精确匹配**
    - 配置：`feature_branch_name = 'dev'`
-   - 分支名：`dev` ✅
-   - 分支名：`develop` ❌（不匹配）
+   - 分支名：`dev` 
+   - 分支名：`develop` （不匹配）
 
 2. **修改 Jenkinsfile 需要提交到代码库**
    - 修改 `feature_branch_name` 后必须提交
@@ -325,7 +325,7 @@ git push origin master
 3. **包含 release 或 uat 的分支自动跳过部署**
    - 任何包含 `release` 或 `uat` 的分支名都只构建不部署
    - 无需额外配置
-   - ⚠️ 避免使用 `uat` 作为正式分支名
+   - 避免使用 `uat` 作为正式分支名
 
 4. **master/main 分支始终可部署**
    - 不受 `feature_branch_name` 限制
@@ -333,7 +333,7 @@ git push origin master
 
 ---
 
-## 🔗 相关文档
+## 相关文档
 
 - [[06-运维文档/SF直播App发布流程\|SF直播App发布流程]] - 移动端发布流程
 - [[07-指南文档/优化工作流程指南\|优化工作流程指南]] - 日常工作流程
@@ -341,7 +341,7 @@ git push origin master
 
 ---
 
-## 🔖 标签
+## 标签
 
 #Jenkins #CI/CD #部署规则 #K8s #ReactCI #shared-pipeline-library
 
