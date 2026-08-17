@@ -38,14 +38,10 @@ https://sf-uat.jncapp.com/banquet/login/index
 
 ## App 下载地址
 
-### 开发版
-
-- 下载地址：<https://wine-eps-taibai-core-guian-guian1-oss.sit.sf-express.com/v1.2/AUTH_wine-EPS-TAIBAI-CORE/sfosspublic001/jnc_new_dev.apk>
-
-### 生产版
-
-- 下载地址：<https://www.pgyer.com/WS3w8i>
-- 密码：`jnc123456`
+> [!info] SF 直播 App 下载
+> - Dev：<https://wine-eps-taibai-core-guian-guian1-oss.sit.sf-express.com/v1.2/AUTH_wine-EPS-TAIBAI-CORE/sfosspublic001/jnc_new_dev.apk>
+> - Prod：<https://www.pgyer.com/WS3w8i>
+> - 密码：`jnc123456`
 
 ---
 

@@ -155,6 +155,17 @@ jnc-gx-web/
 
 ---
 
+## App 下载地址
+
+> [!info] SF 直播 App 下载
+> - Dev：<https://wine-eps-taibai-core-guian-guian1-oss.sit.sf-express.com/v1.2/AUTH_wine-EPS-TAIBAI-CORE/sfosspublic001/jnc_new_dev.apk>
+> - Prod：<https://www.pgyer.com/WS3w8i>
+> - 密码：`jnc123456`
+
+相关发布流程见：[[06-运维文档/SF直播App发布流程\|SF直播App发布流程]]
+
+---
+
 ## 常见问题
 
 _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
