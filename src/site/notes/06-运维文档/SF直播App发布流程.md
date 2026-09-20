@@ -17,9 +17,6 @@
 https://sf-banq.jncapp.cn/banquet/
 ```
 
-**登录账号：**
-- 账号：`jncoperator`
-- 密码：`Fyp@134679`
 
 ---
 
@@ -29,10 +26,6 @@ https://sf-banq.jncapp.cn/banquet/
 ```
 https://sf-uat.jncapp.com/banquet/login/index
 ```
-
-**登录账号：**
-- 账号：`test`
-- 密码：`Fyp@134679`
 
 ---
 
