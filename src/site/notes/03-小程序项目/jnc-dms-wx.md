@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/03/jnc-dms-wx/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/03/jnc-dms-wx/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-dms-wx
 
-> 剑南春 DMS 多功能微信小程序 - 集成分销、TPM、OMS、物流、宴会等多业务模块
+[[01-导航与索引/项目总览\|项目总览]] / 小程序项目
 
----
+> [!abstract] 项目定位
+> 集成 DMS 分销、TPM 促销、OMS 订单、物流与宴会业务的多模块小程序。
+
+> [!wiki-nav] 本页导航
+> [[03-小程序项目/jnc-dms-wx#快速启动\|启动]] · [[03-小程序项目/jnc-dms-wx#核心功能模块\|业务模块]] · [[03-小程序项目/jnc-dms-wx#配置说明\|配置]] · [[03-小程序项目/jnc-dms-wx#环境配置\|环境]] · [[03-小程序项目/jnc-dms-wx#常见问题\|排错]] · [[03-小程序项目/jnc-dms-wx#开发规范\|开发约定]]
 
 ## 快速启动
 
@@ -34,8 +39,6 @@ npm run build:upload
 - 生产环境监听：`npm run prod:weapp`
 - 其他平台：支付宝 `dev:alipay`、字节跳动 `dev:tt`、H5 `dev:h5` 等
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-dms-wx
@@ -44,8 +47,6 @@ npm run build:upload
 - **构建目录**：`dist/`（编译后输出）
 - **小程序基础库版本**：3.11.3
 - **项目路径**：`<工作区>/jnc-dms-wx`
-
----
 
 ## 技术栈
 
@@ -95,8 +96,6 @@ npm run build:upload
 - `eslint` 6.8.0 - 代码检查
 - `miniprogram-ci` 1.5.1 - 小程序 CI 工具
 - `taro-iconfont-cli` 3.3.0 - 图标字体 CLI
-
----
 
 ## 项目结构
 
@@ -179,7 +178,6 @@ jnc-dms-wx/
 └── global.d.ts                # 全局类型声明
 ```
 
----
 
 ## 核心功能模块
 
@@ -264,8 +262,6 @@ jnc-dms-wx/
 - 个人中心
 - 等级管理
 
----
-
 ## 配置说明
 
 ### 小程序配置（app.config.ts）
@@ -320,8 +316,6 @@ jnc-dms-wx/
 - 严格空检查：开启
 - 装饰器支持：开启
 
----
-
 ## 环境配置
 
 环境配置位于 `config/` 目录：
@@ -335,13 +329,9 @@ jnc-dms-wx/
 - Webpack 优化配置
 - 样式处理配置
 
----
-
 ## 相关项目
 
 _暂无记录。如有关联项目，会补充在此处。_
-
----
 
 ## 常见问题
 
@@ -364,8 +354,6 @@ Taro 3.x 项目开发流程：
 1. 在项目根目录执行 `npm install`
 2. 执行 `npm run dev:weapp` 启动开发模式
 3. 使用微信开发者工具打开 `dist/` 目录
-
----
 
 ## 开发规范
 
@@ -398,8 +386,6 @@ Taro 3.x 项目开发流程：
 3. **图片优化**：使用压缩后的图片，优先使用 webp
 4. **减少 setData**：合并多次 setData 调用
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -407,19 +393,14 @@ Taro 3.x 项目开发流程：
 | 2026-06-16 | - | AI 自动补充完整项目文档 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #小程序 #微信小程序 #跨端小程序 #React-17 #Taro #TaroUI #TypeScript #DVA #Redux #DMS系列 #TPM #OMS #多业务模块 #剑南春 #企业微信 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [Taro 官方文档](https://taro-docs.jd.com/)
 - [Taro UI 文档](https://taro-ui.jd.com/)
 - [React 官方文档](https://react.dev/)

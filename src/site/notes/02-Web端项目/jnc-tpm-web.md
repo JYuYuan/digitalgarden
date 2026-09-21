@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-tpm-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-tpm-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-tpm-web
 
-> TPM Web 端 - 基于 UmiJS 的企业级应用
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> TPM 管理系统的 UmiJS 实现，提供商户管理、交易监控、数据报表和文件处理。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-tpm-web#快速启动\|启动]] · [[02-Web端项目/jnc-tpm-web#核心功能模块\|业务模块]] · [[02-Web端项目/jnc-tpm-web#配置说明\|配置]] · [[02-Web端项目/jnc-tpm-web#环境配置\|环境]] · [[02-Web端项目/jnc-tpm-web#开发规范\|开发约定]]
 
 ## 快速启动
 
@@ -36,8 +41,6 @@ npm run start:prod  # 生产环境
 - 类型检查：`npm run tsc`
 - 运行测试：`npm test`
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-tpm-web (内部名: ant-design-pro)
@@ -45,8 +48,6 @@ npm run start:prod  # 生产环境
 - **开发状态**：#维护中
 - **版本**：v5.0.0-beta.0
 - **项目路径**：`<工作区>/jnc-tpm-web`
-
----
 
 ## 技术栈
 
@@ -78,7 +79,9 @@ npm run start:prod  # 生产环境
 - `lodash` 4.17.11 - 工具函数库
 - `moment` 2.29.1 - 时间处理
 - `qs` 6.9.0 - 查询字符串处理
-- `axios`（通过 umi-request）
+- `umi-request`
+{ #1}
+.0.8 - 请求库（package.json 声明）
 - `ahooks` 3.7.11 - React Hooks 库
 - `rxjs` 7.1.0 - 响应式编程
 
@@ -99,8 +102,6 @@ npm run start:prod  # 生产环境
 - `crypto-js` 4.1.1 - 加密库
 - `react-activation` 0.11.2 - 页面缓存
 - `umi-plugin-keep-alive` 0.0.1-beta.31 - 路由缓存
-
----
 
 ## 项目结构
 
@@ -124,7 +125,6 @@ jnc-tpm-web/
 └── package.json
 ```
 
----
 
 ## 核心功能模块
 
@@ -148,8 +148,6 @@ jnc-tpm-web/
 - Ace 代码编辑器
 - 语法高亮
 
----
-
 ## 配置说明
 
 ### UmiJS 配置
@@ -172,8 +170,6 @@ jnc-tpm-web/
 - Stylelint：样式检查
 - lint-staged：提交前检查
 
----
-
 ## 环境配置
 
 **多环境支持：**
@@ -182,8 +178,6 @@ jnc-tpm-web/
 - `start:test` - 测试环境
 - `start:prod` - 生产环境
 
----
-
 ## 相关项目
 
 - [[02-Web端项目/tpm-pc-manager\|tpm-pc-manager]] - TPM PC 管理系统
@@ -191,30 +185,19 @@ jnc-tpm-web/
 - [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] - TPM 证据审计小程序
 - [[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] - TPM 证据审计 Android
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 开发规范
 
 ### 页面开发
 
-1. **约定式路由**：文件结构即路由结构
-2. **使用 Pro 组件**：优先使用 Ant Design Pro 组件
-3. **数据流**：使用 UmiJS 的 model 管理状态
+页面与 Pro 组件约定见 [[06-研发规范/React项目规范\|React项目规范]]，框架入口见 [[06-研发规范/Umi项目开发指南\|Umi项目开发指南]]。本项目沿用约定式路由和 UmiJS model。
 
 ### 代码风格
 
-- 遵循 UmiJS 官方规范
-- 使用 TypeScript 严格模式
-- 函数组件 + Hooks
-- 提交前自动检查（lint-staged）
-
----
+遵循 UmiJS 约定，使用 TypeScript 严格模式、函数组件和 Hooks；提交前由 lint-staged 检查。命名与目录规则见 [[06-研发规范/开发规范\|开发规范]]。
 
 ## 更新日志
 
@@ -223,18 +206,13 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | v5.0.0-beta.0 | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-16 #UmiJS-3 #AntDesign-4 #AntDesignPro #TypeScript #腾讯云 #腾讯云COS #TPM系列 #支付管理 #需要升级 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [UmiJS 官方文档](https://umijs.org/)
 - [Ant Design Pro 官方文档](https://pro.ant.design/)

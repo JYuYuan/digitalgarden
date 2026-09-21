@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-dms-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-dms-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-dms-web
 
-> JNC DMS Web 管理后台 - 基于 React 的分销管理系统（Distribution Management System）
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> DMS 分销管理后台，覆盖主数据、订单、库存、分销政策与促销管理。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-dms-web#快速启动\|启动]] · [[02-Web端项目/jnc-dms-web#项目结构\|目录]] · [[02-Web端项目/jnc-dms-web#核心功能模块\|业务模块]] · [[02-Web端项目/jnc-dms-web#环境配置\|环境]] · [[02-Web端项目/jnc-dms-web#常见问题\|排错]]
 
 ## 快速启动
 
@@ -35,8 +40,6 @@ http://localhost:3000
 - 代码修复：`npm run lint:fix` / `yarn lint:fix`
 - 生成自定义主题：`npm run theme` / `yarn theme`
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-dms-web
@@ -44,8 +47,6 @@ http://localhost:3000
 - **开发状态**：#维护中
 - **版本**：v0.1.0
 - **项目路径**：`<工作区>/jnc-dms-web`
-
----
 
 ## 技术栈
 
@@ -91,8 +92,6 @@ http://localhost:3000
 
 **云存储：**
 - `aws-sdk` 2.831.0 - AWS S3 云存储
-
----
 
 ## 项目结构
 
@@ -164,7 +163,6 @@ jnc-dms-web/
 └── package.json          # 依赖管理
 ```
 
----
 
 ## 环境配置
 
@@ -183,8 +181,6 @@ jnc-dms-web/
 **Babel 插件：**
 - `@babel/plugin-proposal-decorators` - 装饰器语法（legacy mode）
 - `@babel/plugin-proposal-class-properties` - 类属性语法（loose mode）
-
----
 
 ## 核心功能模块
 
@@ -244,8 +240,6 @@ jnc-dms-web/
 - 权限控制（基于 Redux）
 - 响应式布局
 
----
-
 ## 配置说明
 
 ### 代码规范
@@ -267,13 +261,9 @@ jnc-dms-web/
 - 支持多页签场景
 - 自动管理缓存生命周期
 
----
-
 ## 相关项目
 
 - 该项目属于 **JNC DMS 系列**
-
----
 
 ## 常见问题
 
@@ -293,8 +283,6 @@ jnc-dms-web/
 
 确保 Babel 插件顺序正确：`decorators` 必须在 `class-properties` 之前。
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -302,16 +290,10 @@ jnc-dms-web/
 | 2026-06-16 | v0.1.0 | AI 自动补充完整项目文档 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-16 #Vite #AntDesign-4 #Redux #DMS系列 #分销管理系统 #需要升级 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]

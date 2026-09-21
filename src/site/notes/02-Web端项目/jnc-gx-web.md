@@ -1,18 +1,23 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-gx-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-gx-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-gx-web
 
-> 剑南春产供销信息平台 - 基于 RuoYi-Vue 的企业管理系统
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> 基于 RuoYi-Vue 的产供销信息平台，覆盖计划、订单、采购销售、商品库存与业务报表。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-gx-web#分支详情\|分支]] · [[02-Web端项目/jnc-gx-web#快速启动\|启动]] · [[02-Web端项目/jnc-gx-web#项目结构\|目录]] · [[02-Web端项目/jnc-gx-web#核心功能模块\|业务模块]] · [[02-Web端项目/jnc-gx-web#环境配置\|环境]]
+
 ## 分支详情
 
 - 生产分支：release
 - 测试分支：test
 
----
 ## 快速启动
 
 ```bash
@@ -36,8 +41,6 @@ http://localhost:1024
 - 单元测试：`npm run test:unit`
 - CI 检查：`npm run test:ci`
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-gx-web
@@ -46,8 +49,6 @@ http://localhost:1024
 - **项目路径**：`<工作区>/jnc-gx-web`
 - **系统名称**：剑南春产供销信息平台
 - **仓库来源**：RuoYi-Vue 二次开发
-
----
 
 ## 技术栈
 
@@ -78,8 +79,6 @@ http://localhost:1024
 - `vue-splitpane` 1.0.4 - 分栏布局
 - `@riophae/vue-treeselect` 0.4.0 - 树形选择器
 
----
-
 ## 项目结构
 
 ```text
@@ -103,7 +102,6 @@ jnc-gx-web/
 └── package.json
 ```
 
----
 
 ## 核心功能模块
 
@@ -135,8 +133,6 @@ jnc-gx-web/
 - 流程实例查询
 - 待办任务处理
 
----
-
 ## 环境配置
 
 ### 本地开发
@@ -158,23 +154,16 @@ jnc-gx-web/
 - `VUE_APP_BASE_OAUTH_API_DEV` - 开发认证中心地址
 - `VUE_APP_BASE_BASIC` - 基础认证串
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 标签
 
 #前端 #Web端 #Vue2 #ElementUI #Vuex #VueRouter #RuoYi #产供销平台 #业务管理系统 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[01-索引/快速导航\|快速导航]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]]
+
 - [RuoYi-Vue](https://gitee.com/y_project/RuoYi-Vue)

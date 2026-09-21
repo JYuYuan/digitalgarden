@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/03/jnc-audit-wx/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/03/jnc-audit-wx/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-audit-wx
 
-> JNC 审计稽核微信小程序 - 任务管理与稽核系统移动端
+[[01-导航与索引/项目总览\|项目总览]] / 小程序项目
 
----
+> [!abstract] 项目定位
+> 稽核任务小程序，提供任务打卡、日报、考勤、绩效、审核和媒体采集。
+
+> [!wiki-nav] 本页导航
+> [[03-小程序项目/jnc-audit-wx#快速启动\|启动]] · [[03-小程序项目/jnc-audit-wx#核心功能模块\|业务模块]] · [[03-小程序项目/jnc-audit-wx#配置说明\|配置]] · [[03-小程序项目/jnc-audit-wx#状态管理架构\|数据流]] · [[03-小程序项目/jnc-audit-wx#常见问题\|排错]]
 
 ## 快速启动
 
@@ -38,8 +43,6 @@ npm run build:upload
 **其他常用命令：**
 - 编译转换 JSX：`npm run beforeCompile`
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-audit-wx
@@ -48,8 +51,6 @@ npm run build:upload
 - **框架版本**：Taro 3.3.11
 - **项目路径**：`<工作区>/jnc-audit-wx`
 - **创建日期**：2022-10-18
-
----
 
 ## 技术栈
 
@@ -85,8 +86,6 @@ npm run build:upload
 - `@typescript-eslint` - TypeScript 代码检查
 - `eslint` + `eslint-config-taro` - 代码规范
 - `miniprogram-ci` 1.5.1 - 小程序 CI 工具
-
----
 
 ## 项目结构
 
@@ -188,7 +187,6 @@ jnc-audit-wx/
 └── tsconfig.json               # TypeScript 配置
 ```
 
----
 
 ## 核心功能模块
 
@@ -225,8 +223,6 @@ jnc-audit-wx/
 - 表单验证
 - 动态显示隐藏
 - 表单数据联动
-
----
 
 ## 配置说明
 
@@ -281,13 +277,13 @@ jnc-audit-wx/
 - `ENV: "uat"`
 - 开启主包优化：`optimizeMainPackage: true`
 
+本页记录的 `dev.js` 与 `prod.js` 均使用 `ENV: "uat"`；构建模式与实际接口环境需分别核对。
+
 **API 配置（apiConfig.ts）：**
 - 权限中心接口：`password-${env}.jncapp.cn`
 - SAC 接口：`api-sac-${env}.jncapp.cn`
 - TPM v1 接口：`api-tpm-${env}.jncapp.cn`
 - TPM v2 接口：`api-tpm-v2-${env}.jncapp.cn`
-
----
 
 ## 状态管理架构
 
@@ -308,14 +304,11 @@ jnc-audit-wx/
 用户操作 → dispatch(action) → effects(异步) → reducers(同步) → state 更新 → 视图刷新
 ```
 
----
 
 ## 相关项目
 
 - [[03-小程序项目/andromeda-wx\|andromeda-wx]] - Andromeda SFA 销售自动化小程序
 - JNC 审计系统后端 API
-
----
 
 ## 常见问题
 
@@ -332,8 +325,6 @@ jnc-audit-wx/
 ### 3. 视频上传
 - 使用腾讯云点播 SDK（vod-wx-sdk-v2）
 - 支持视频压缩和进度显示
-
----
 
 ## 开发规范
 
@@ -362,8 +353,6 @@ jnc-audit-wx/
 4. **按需加载**：使用 Taro 动态导入
 5. **请求优化**：使用 DVA Loading 统一管理请求状态
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -371,19 +360,14 @@ jnc-audit-wx/
 | 2026-06-16 | - | AI 自动生成项目完整文档 |
 | 2022-10-18 | - | 项目创建 |
 
----
-
 ## 标签
 
 #小程序 #微信小程序 #跨端小程序 #React-17 #Taro #TaroUI #TypeScript #DVA #Redux #审计系列 #稽核系统 #任务管理 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[03-小程序项目/andromeda-wx\|andromeda-wx]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[03-小程序项目/andromeda-wx\|andromeda-wx]]
+
 - [Taro 官方文档](https://taro-docs.jd.com/)
 - [Taro UI 文档](https://taro-ui.jd.com/)
 - [DVA 官方文档](https://dvajs.com/)

@@ -1,10 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-bigdata-mgt-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-bigdata-mgt-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-bigdata-mgt-web
 
-> 数据管理平台 - 基于 UmiJS Max 4 + React 18 + Ant Design 5 构建的企业级数据管理平台
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
+
+> [!abstract] 项目定位
+> 大数据平台管理后台，维护 API Gateway 的数据源、调用方、接口元数据与授权，并提供访问审计入口。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-bigdata-mgt-web#快速启动\|启动]] · [[02-Web端项目/jnc-bigdata-mgt-web#核心功能模块\|数据网关]] · [[02-Web端项目/jnc-bigdata-mgt-web#项目结构\|目录]] · [[02-Web端项目/jnc-bigdata-mgt-web#环境配置\|环境]] · [[02-Web端项目/jnc-bigdata-mgt-web#技术特性\|技术特性]]
 
 ## 项目信息
 
@@ -14,8 +21,6 @@
 - **技术负责人**：dompling
 - **项目路径**：`<工作区>/jnc-bigdata-mgt-web`
 - **仓库类型**：私有仓库
-
----
 
 ## 快速启动
 
@@ -46,8 +51,6 @@ npm install
 | `npm run format` | 代码格式化（Prettier） |
 | `npm run openapi:big-data` | 更新 Big Data API 接口服务 |
 
----
-
 ## 技术栈
 
 ### 核心技术
@@ -72,8 +75,6 @@ npm install
 - **Git Hooks**：Husky + lint-staged
 - **环境变量管理**：cross-env
 - **API 代码生成**：@umijs/openapi
-
----
 
 ## 项目结构
 
@@ -122,7 +123,6 @@ jnc-bigdata-mgt-web/
 └── README.md
 ```
 
----
 
 ## 核心功能模块
 
@@ -156,8 +156,6 @@ API Gateway 前端入口统一挂在 `/api-gateway` 路径下：
 - API 调用监控
 - 访问日志分析
 
----
-
 ## 环境配置
 
 ### 环境切换
@@ -179,8 +177,6 @@ UMI_ENV=product    # 生产环境
 | `process.env.LOGIN_PATH` | 统一登录地址 |
 | `process.env.SAC_API` | 权限中心接口前缀 |
 | `process.env.UMI_ENV` | 当前 Umi 环境标识 |
-
----
 
 ## 技术特性
 
@@ -204,8 +200,6 @@ UMI_ENV=product    # 生产环境
 - Prettier：统一代码风格
 - TypeScript 严格模式：类型安全
 
----
-
 ## 相关文档
 
 - [UmiJS 官方文档](https://umijs.org/)
@@ -214,14 +208,10 @@ UMI_ENV=product    # 生产环境
 - [React 官方文档](https://react.dev/)
 - [TypeScript 官方文档](https://www.typescriptlang.org/)
 
----
-
 ## 相关项目
 
 - [[02-Web端项目/jnc-report-web\|jnc-report-web]] - 报表系统
 - [[02-Web端项目/andromeda-web\|andromeda-web]] - 待补充关联
-
----
 
 ## 更新日志
 
@@ -230,17 +220,10 @@ UMI_ENV=product    # 生产环境
 | 2026-06-16 | - | 完善项目文档，补充技术栈、项目结构、功能模块详情 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-18 #UmiJS-Max #UmiJS-4 #AntDesign-5 #AntDesignPro #TypeScript #大数据 #数据管理 #API网关 #企业级应用 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[01-索引/React项目规范\|React项目规范]]
-- [[01-索引/Umi项目开发指南\|Umi项目开发指南]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[06-研发规范/React项目规范\|React项目规范]] · [[06-研发规范/Umi项目开发指南\|Umi项目开发指南]]

@@ -1,10 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/bss-frontend/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/bss-frontend/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # bss-frontend
 
-> BSS 前端系统 - 业务支撑系统
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
+
+> [!abstract] 项目定位
+> 业务支撑系统前端，提供管理页面、数据图表和移动端适配。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/bss-frontend#开发命令\|开发命令]] · [[02-Web端项目/bss-frontend#环境配置\|环境]] · [[02-Web端项目/bss-frontend#核心特性\|核心特性]] · [[02-Web端项目/bss-frontend#开发规范\|开发约定]] · [[02-Web端项目/bss-frontend#常见问题\|排错]]
 
 ## 项目信息
 
@@ -13,8 +20,6 @@
 - **开发状态**：#进行中
 - **技术负责人**：待填写
 - **项目路径**：`<工作区>/bss-frontend`
-
----
 
 ## 技术栈
 
@@ -49,8 +54,6 @@
 - **代码检查**：lint-staged
 - **构建工具**：UmiJS (基于 Vite)
 
----
-
 ## 项目结构
 
 ```
@@ -69,7 +72,6 @@ bss-frontend/
 └── package.json
 ```
 
----
 
 ## 开发命令
 
@@ -111,7 +113,6 @@ npm run format
 npm run setup
 ```
 
----
 
 ## 环境配置
 
@@ -120,8 +121,6 @@ npm run setup
 - **develop** - 开发环境
 - **uat** - UAT 测试环境
 - **product** - 生产环境
-
----
 
 ## 配置文件
 
@@ -132,8 +131,6 @@ UmiJS 支持多环境配置文件：
 - `config/config.develop.ts` - 开发环境
 - `config/config.uat.ts` - UAT 环境
 - `config/config.product.ts` - 生产环境
-
----
 
 ## 核心特性
 
@@ -161,29 +158,20 @@ UmiJS 支持多环境配置文件：
 - `rc-queue-anim` - 队列动画
 - `rc-tween-one` - 补间动画
 
----
-
 ## 相关项目
 
 - [[02-Web端项目/tpm-pc-manager\|tpm-pc-manager]] - TPM PC 管理系统
 - [[02-Web端项目/jnc-dms-web\|jnc-dms-web]] - DMS Web 端
 
----
-
 ## 开发规范
 
 ### 代码规范
 
-1. **组件命名**：使用 PascalCase
-2. **文件命名**：组件文件使用 PascalCase，工具文件使用 camelCase
-3. **样式文件**：使用 CSS Modules 或 Less
-4. **状态管理**：优先使用 UmiJS 的 Model
+组件与文件命名见 [[06-研发规范/开发规范#命名规范\|命名规范]]；样式使用 CSS Modules 或 Less，状态管理优先使用 UmiJS Model。
 
 ### Git 规范
 
-项目配置了 Husky 和 lint-staged：
-- 提交前自动格式化代码
-- 提交前进行代码检查
+Husky 与 lint-staged 在提交前自动格式化并检查代码。
 
 ### 提交信息规范
 
@@ -198,7 +186,6 @@ test: 测试相关
 chore: 构建/工具链相关
 ```
 
----
 
 ## 常见问题
 
@@ -217,7 +204,6 @@ npm install
 npm run setup
 ```
 
----
 
 ## 更新日志
 
@@ -225,15 +211,10 @@ npm run setup
 |------|------|------|
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-18 #UmiJS-4 #AntDesign-5 #AntDesignPro #TypeScript #BSS #业务支撑系统 #进行中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]]

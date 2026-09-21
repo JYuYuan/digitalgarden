@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/03/andromeda-wx/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/03/andromeda-wx/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # andromeda-wx
 
-> Andromeda 微信小程序 - SFA 销售自动化系统移动端
+[[01-导航与索引/项目总览\|项目总览]] / 小程序项目
 
----
+> [!abstract] 项目定位
+> SFA 销售自动化小程序，覆盖考勤、拜访、终端、经销商和流程审批等移动办公场景。
+
+> [!wiki-nav] 本页导航
+> [[03-小程序项目/andromeda-wx#快速启动\|启动]] · [[03-小程序项目/andromeda-wx#核心功能模块\|业务模块]] · [[03-小程序项目/andromeda-wx#配置说明\|配置]] · [[03-小程序项目/andromeda-wx#环境配置\|环境]] · [[03-小程序项目/andromeda-wx#开发规范\|开发约定]]
 
 ## 快速启动
 
@@ -30,8 +35,6 @@ npm install
 - 代码检查：`npm run lint`
 - 代码修复：`npm run lint:fix`
 
----
-
 ## 项目信息
 
 - **项目名称**：andromeda-wx (andromeda-wxp)
@@ -39,8 +42,6 @@ npm install
 - **开发状态**：#维护中
 - **小程序版本**：使用 trial 版本基础库
 - **项目路径**：`<工作区>/andromeda-wx`
-
----
 
 ## 技术栈
 
@@ -73,8 +74,6 @@ npm install
 - `eslint` + `eslint-config-alloy` - 代码检查
 - `prettier` + `prettier-plugin-wxml` - 代码格式化
 - `@typescript-eslint` - TypeScript 规则
-
----
 
 ## 项目结构
 
@@ -133,7 +132,6 @@ andromeda-wx/
 └── project.config.json     # 项目配置
 ```
 
----
 
 ## 核心功能模块
 
@@ -175,8 +173,6 @@ andromeda-wx/
 - 密码修改
 - 账号切换
 
----
-
 ## 配置说明
 
 ### 小程序配置（app.json）
@@ -204,8 +200,6 @@ andromeda-wx/
 - TypeScript + Less 支持
 - 上传时生成 SourceMap
 
----
-
 ## 环境配置
 
 环境配置位于 `config/env.js`，包含：
@@ -213,19 +207,13 @@ andromeda-wx/
 - 加密密钥配置
 - 第三方服务配置
 
----
-
 ## 相关项目
 
 - [[02-Web端项目/andromeda-web\|andromeda-web]] - Andromeda Web 端
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 开发规范
 
@@ -252,8 +240,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 3. **合理使用 setData**：避免频繁更新
 4. **使用自定义组件**：提高复用性
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -261,19 +247,14 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | - | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #小程序 #微信小程序 #原生小程序 #MobX #TDesign #TypeScript #Andromeda系列 #SFA销售自动化 #高优先级 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [微信小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 - [TDesign Miniprogram 文档](https://tdesign.tencent.com/miniprogram/overview)
 - [MobX Miniprogram 文档](https://github.com/wechat-miniprogram/mobx-miniprogram)

@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/tpm-pc-manager/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/tpm-pc-manager/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # tpm-pc-manager
 
-> TPM PC 管理系统 - 第三方支付管理平台
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> TPM PC 第三方支付管理平台，集成腾讯云即时通讯、音视频、文件处理与地图能力。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/tpm-pc-manager#快速启动\|启动]] · [[02-Web端项目/tpm-pc-manager#核心功能模块\|能力模块]] · [[02-Web端项目/tpm-pc-manager#配置说明\|配置]] · [[02-Web端项目/tpm-pc-manager#常见问题\|排错]] · [[02-Web端项目/tpm-pc-manager#技术债务\|待办]]
 
 ## 快速启动
 
@@ -30,8 +35,6 @@ http://localhost:3000（默认端口，根据配置可能不同）
 - 代码检查：`npm run lint`
 - 代码检查并修复：`npm run lint:fix`
 
----
-
 ## 项目信息
 
 - **项目名称**：tpm-pc-manager (内部名: test)
@@ -39,8 +42,6 @@ http://localhost:3000（默认端口，根据配置可能不同）
 - **开发状态**：#维护中
 - **版本**：v0.1.0
 - **项目路径**：`<工作区>/tpm-pc-manager`
-
----
 
 ## 技术栈
 
@@ -89,8 +90,6 @@ http://localhost:3000（默认端口，根据配置可能不同）
 - `react-draggable` 3.0.5 - 拖拽功能
 - `react-resizable` 1.10.1 - 可调整大小
 
----
-
 ## 项目结构
 
 ```
@@ -111,7 +110,6 @@ tpm-pc-manager/
 └── package.json
 ```
 
----
 
 ## 开发命令
 
@@ -141,7 +139,6 @@ npm run lint
 npm run lint:fix
 ```
 
----
 
 ## 核心功能模块
 
@@ -181,8 +178,6 @@ npm run lint:fix
 - **可调整大小**：react-resizable@1.10.1
 - **动画效果**：rc-banner-anim, rc-queue-anim, rc-tween-one
 
----
-
 ## 配置说明
 
 ### Webpack 配置
@@ -218,16 +213,12 @@ npm run lint:fix
 - TypeScript 支持
 - 提交前自动检查（pre-commit hook）
 
----
-
 ## 环境配置
 
 **环境变量管理：**
 - `.env` 文件配置环境变量
 - `dotenv@6.0.0` 加载环境变量
 - `dotenv-expand@4.2.0` 支持变量扩展
-
----
 
 ## 相关项目
 
@@ -236,13 +227,9 @@ npm run lint:fix
 - [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] - TPM 证据审计小程序
 - [[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] - TPM 证据审计 Android
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
-**已知注意事项：**
+以下为已记录的项目注意事项，具体排查与处理过程统一记录在 [[09-问题与记录/问题记录\|问题记录]]。
 
 1. **跨平台兼容性问题**
    - `npm start` 脚本使用 Windows 语法 `set NODE_ENV=development`
@@ -256,30 +243,19 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
    - 升级前查看官方迁移指南
    - 测试所有音视频、即时通讯功能
 
----
-
 ## 开发规范
 
 ### 组件开发
 
-1. **函数组件优先**：使用 React Hooks
-2. **Props 类型定义**：使用 TypeScript 接口
-3. **样式隔离**：使用 CSS Modules 或 Less
+函数组件、Hooks 与 Props 类型约定见 [[06-研发规范/React项目规范\|React项目规范]]；本项目使用 TypeScript 接口，样式隔离沿用 CSS Modules 或 Less。
 
 ### 状态管理
 
-1. **Redux Toolkit**：推荐使用 createSlice
-2. **异步操作**：使用 Redux Thunk
-3. **状态设计**：遵循范式化原则
+优先使用 Redux Toolkit 的 `createSlice`，异步逻辑使用 Redux Thunk，并保持状态设计范式化。
 
 ### 代码风格
 
-- 使用 ESLint 规则
-- 提交前自动检查和修复
-- 组件文件使用 PascalCase
-- 工具函数使用 camelCase
-
----
+组件与工具文件命名见 [[06-研发规范/开发规范#命名规范\|命名规范]]；代码遵循项目 ESLint 规则，提交前自动检查和修复。
 
 ## 技术债务
 
@@ -290,8 +266,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 - [ ] 添加单元测试
 - [ ] 改进构建脚本跨平台支持（使用 cross-env）
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -299,16 +273,10 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | v0.1.0 | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-16 #Webpack #AntDesign-4 #Redux #TypeScript #腾讯云 #腾讯云IM #腾讯云TRTC #腾讯云COS #腾讯云VOD #TPM系列 #支付管理 #需要升级 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]

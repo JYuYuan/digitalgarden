@@ -1,10 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/05/liveup-doc/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/05/liveup-doc/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # liveup-doc - 直播审核系统对接文档
 
-> 直播审核系统第三方接入对接文档站点，基于 VuePress 1.x 构建
+[[01-导航与索引/项目总览\|项目总览]] / 文档项目
+
+> [!abstract] 项目定位
+> 直播审核系统第三方接入文档站点，基于 VuePress 1.x，维护服务端 API、客户端跳转和表单配置说明。
+
+> [!wiki-nav] 本页导航
+> [[05-文档项目/liveup-doc#快速启动\|运行与构建]] · [[05-文档项目/liveup-doc#项目结构\|目录]] · [[05-文档项目/liveup-doc#文档内容\|对接内容]] · [[05-文档项目/liveup-doc#开发规范\|写作约定]] · [[05-文档项目/liveup-doc#注意事项\|接入约束]]
 
 ## 项目信息
 
@@ -14,8 +21,6 @@
 - **技术负责人**：待填写
 - **项目路径**：`<工作区>/liveup-doc`
 - **访问路径**：`/live-docs/`
-
----
 
 ## 快速启动
 
@@ -44,7 +49,6 @@ npm run deploy
 # 或 bash deploy.sh
 ```
 
----
 
 ## 技术栈
 
@@ -62,8 +66,6 @@ npm run deploy
 - **应用名称**：`tpm-pc-manager-docs`
 - **副本数**：1
 - **Web 服务器**：Nginx (端口 80)
-
----
 
 ## 项目结构
 
@@ -89,9 +91,10 @@ liveup-doc/
 └── yarn.lock                      # 依赖锁定文件
 ```
 
----
 
 ## 文档内容
+
+第三方接入按 `live.md`、`mini.md`、`form.md` 分别核对服务端接口、客户端跳转和表单字段。内部直播主链路与小程序 / Android 共享契约见 [[07-运维与发布/专项/直播审核知识地图\|直播审核知识地图]]。
 
 ### VuePress 配置
 
@@ -161,8 +164,6 @@ liveup-doc/
 - 关联字段: 与推送凭证类任务的 `base.item.code` 关联
 - 日期: 日期类型、限制区间
 
----
-
 ## 开发规范
 
 ### 文档编写规范
@@ -183,16 +184,12 @@ liveup-doc/
 - 响应参数说明
 - 响应示例
 
----
-
 ## 注意事项
 
 1. **签名机制**: 所有 API 请求需要在 Header 中携带 `timestamp`、`sign`、`appKey`
 2. **环境隔离**: `appKey`、`appSecret`、`businessRelCode` 在每个环境独立申请
 3. **请求格式**: 仅支持 POST 请求，Content-Type 为 `application/json;charset=utf-8`
 4. **文档更新**: 修改文档后需重新构建并部署才能生效
-
----
 
 ## 更新日志
 
@@ -202,17 +199,13 @@ liveup-doc/
 | 2026-06-16 | - | 补充完整项目文档 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #文档项目 #文档站点 #VuePress #直播审核 #API文档 #维护中
 
----
-
 ## 相关链接
+
+[[01-导航与索引/项目总览#技术栈\|技术栈]]
 
 - [VuePress 官方文档](https://vuepress.vuejs.org/)
 - [微信小程序跳转文档](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]

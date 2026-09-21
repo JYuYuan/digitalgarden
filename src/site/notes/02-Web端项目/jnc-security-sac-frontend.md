@@ -1,12 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-security-sac-frontend/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-security-sac-frontend/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-security-sac-frontend
 
-> SAC 权限管理系统前端 - 基于 UmiJS 3.x + Ant Design Pro 的企业级权限管理平台
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> 权限管理系统前端，维护用户、角色、菜单和接口资源，并覆盖组织数据权限与大数据报表权限。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-security-sac-frontend#文档地址\|接口文档]] · [[02-Web端项目/jnc-security-sac-frontend#快速启动\|启动]] · [[02-Web端项目/jnc-security-sac-frontend#核心功能模块\|权限模块]] · [[02-Web端项目/jnc-security-sac-frontend#配置说明\|配置]] · [[02-Web端项目/jnc-security-sac-frontend#开发规范\|开发约定]] · [[02-Web端项目/jnc-security-sac-frontend#部署说明\|部署]]
+
 ## 文档地址
 
 https://api-sac-dev.jncapp.cn/bigdata-auth-service/doc.html#/2.X%E7%89%88%E6%9C%AC/%E5%B2%97%E4%BD%8D%E7%BB%84%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/pageRoleUsingPOST_1
@@ -44,8 +50,6 @@ npm run build         # 生产构建
 - 测试：`npm test`
 - TypeScript 检查：`npm run tsc`
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-security-sac-frontend
@@ -53,8 +57,6 @@ npm run build         # 生产构建
 - **开发状态**：#维护中
 - **仓库地址**：`https://gitlab.jncapp.cn/sac/jnc-security-sac-frontend.git`
 - **项目路径**：`<工作区>/jnc-security-sac-frontend`
-
----
 
 ## 技术栈
 
@@ -97,8 +99,6 @@ npm run build         # 生产构建
 - `stylelint` 13.0.0 - 样式检查
 - `lint-staged` 10.0.0 - Git 暂存文件检查
 - `mockjs` 1.0.1-beta3 - Mock 数据
-
----
 
 ## 项目结构
 
@@ -168,7 +168,6 @@ jnc-security-sac-frontend/
 └── package.json
 ```
 
----
 
 ## 核心功能模块
 
@@ -205,8 +204,6 @@ jnc-security-sac-frontend/
 - 动态菜单加载
 - 权限路由守卫（`normalRouteFilter`）
 - 多系统权限集成（系统权限 + 大数据权限）
-
----
 
 ## 配置说明
 
@@ -247,8 +244,6 @@ jnc-security-sac-frontend/
 - **lint-staged**：提交前自动检查和格式化
 - **TypeScript**：严格类型检查
 
----
-
 ## 多环境管理
 
 **环境配置：**
@@ -270,54 +265,34 @@ npm run start:pre
 npm run start:no-mock
 ```
 
----
 
 ## 相关项目
 
-- [[待建档项目索引#SAC 权限系统后端\|SAC 权限系统后端]] - SAC 权限管理系统后端 API
-- [[待建档项目索引#大数据权限平台\|大数据权限平台]] - 大数据平台权限管理
-- [[待建档项目索引#统一认证中心\|统一认证中心]] - SSO 单点登录服务
-
----
+- [[01-导航与索引/项目维护#SAC 权限系统后端\|SAC 权限系统后端]] - SAC 权限管理系统后端 API
+- [[01-导航与索引/项目维护#大数据权限平台\|大数据权限平台]] - 大数据平台权限管理
+- [[01-导航与索引/项目维护#统一认证中心\|统一认证中心]] - SSO 单点登录服务
 
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 开发规范
 
 ### 页面开发
 
-1. **配置式路由**：在 `config/routes.ts` 中配置路由
-2. **使用 Pro 组件**：优先使用 Ant Design Pro Components
-3. **数据流管理**：使用 Dva model 管理全局状态
-4. **权限控制**：使用 `access: 'normalRouteFilter'` 进行路由权限控制
+路由在 `config/routes.ts` 中配置，使用 `access: 'normalRouteFilter'` 控制路由权限；全局状态使用 Dva model。Pro Components 的通用约定见 [[06-研发规范/React项目规范\|React项目规范]]。
 
 ### 组件开发
 
-- 公共组件放在 `src/components/` 目录
-- 页面级组件放在对应的 `pages/` 子目录
-- 组件使用函数组件 + Hooks（React 17）
-- 拖拽功能使用 `@dnd-kit/core`
+公共组件与函数组件 / Hooks 约定见 [[06-研发规范/React项目规范\|React项目规范]]；本项目使用 React 17，页面级组件放在对应 `pages/` 子目录，拖拽使用 `@dnd-kit/core`。
 
 ### API 服务
 
-- API 服务配置在 `src/services/` 目录
-- 使用 UmiJS 的 request 进行网络请求
-- 支持 OpenAPI 自动生成（配置在 `config/oneapi.json`）
-- 使用代理进行跨域处理（`config/proxy.ts`）
+服务配置放在 `src/services/`，使用 UmiJS request；OpenAPI 生成配置位于 `config/oneapi.json`，跨域代理位于 `config/proxy.ts`。
 
 ### 代码风格
 
-- 遵循 Ant Design Pro 官方规范
-- 使用 TypeScript 类型约束
-- 函数组件 + Hooks 优先
-- 使用 Prettier 自动格式化
-- 提交前自动 lint 检查（lint-staged）
-
----
+遵循 Ant Design Pro 约定，使用 TypeScript 类型约束和 Prettier 格式化；提交前由 lint-staged 检查。命名与目录规则见 [[06-研发规范/开发规范\|开发规范]]。
 
 ## 部署说明
 
@@ -330,16 +305,14 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 - Hash 文件名：开启 hash 命名
 - 静态资源导出：`exportStatic: {}`
 
----
-
 ## 项目统计
+
+以下为原建档时记录的规模，不代表当前仓库的实时统计。
 
 - **代码行数**：约 25,170 行（TS/TSX/JS/JSX）
 - **核心页面**：20+ 个功能模块
 - **公共组件**：10+ 个可复用组件
 - **路由数量**：30+ 个路由配置
-
----
 
 ## 更新日志
 
@@ -349,19 +322,14 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2025-10-30 | - | 更新 config.ts 配置 |
 | 2023-08-03 | - | 更新默认设置 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-17 #UmiJS-3 #AntDesign-4 #AntDesignPro #TypeScript #权限管理系统 #SAC #企业级应用 #RBAC #Dva #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [UmiJS 3 官方文档](https://v3.umijs.org/)
 - [Ant Design 4 官方文档](https://4x.ant.design/)
 - [Ant Design Pro 官方文档](https://pro.ant.design/)

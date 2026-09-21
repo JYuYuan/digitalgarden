@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/tpm-merchant-wx/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/tpm-merchant-wx/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # tpm-merchant-wx
 
-> TPM 商家端后台管理系统 - 经销商积分池与投入规则管理平台
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> 经销商积分池与投入规则管理后台，提供积分回收单、异常账单监控和账户管理。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/tpm-merchant-wx#快速启动\|启动]] · [[02-Web端项目/tpm-merchant-wx#核心功能模块\|业务模块]] · [[02-Web端项目/tpm-merchant-wx#配置说明\|配置]] · [[02-Web端项目/tpm-merchant-wx#权限控制\|权限]] · [[02-Web端项目/tpm-merchant-wx#网络请求\|请求]] · [[02-Web端项目/tpm-merchant-wx#构建与部署\|部署]]
 
 ## 快速启动
 
@@ -34,8 +39,6 @@ npm run build
 - 代码格式化：`npm run format`
 - 项目初始化：`npm run setup`
 
----
-
 ## 项目信息
 
 - **项目名称**：tpm-merchant-wx（TPM 商家端后台）
@@ -44,8 +47,6 @@ npm run build
 - **K8s 应用名**：tpm-pc-manager-merchant
 - **K8s 命名空间**：tpm-dev
 - **项目路径**：`<工作区>/tpm-merchant-wx`
-
----
 
 ## 技术栈
 
@@ -79,8 +80,6 @@ npm run build
 - `prettier-plugin-packagejson` - package.json 格式化
 - `husky` 8.0.1 - Git Hooks 管理
 - `lint-staged` 13.0.3 - Git 暂存文件检查
-
----
 
 ## 项目结构
 
@@ -138,7 +137,6 @@ tpm-merchant-wx/
 └── README.md              # 项目说明
 ```
 
----
 
 ## 核心功能模块
 
@@ -169,8 +167,6 @@ tpm-merchant-wx/
 ### 6. 账户管理（Account）
 - 修改密码
 - 用户信息查看
-
----
 
 ## 配置说明
 
@@ -219,8 +215,6 @@ DID_YOU_KNOW=none
 - `UMI_ENV=test` - 测试环境
 - `UMI_ENV=prod_release` - 生产环境
 
----
-
 ## 权限控制
 
 ### 权限配置（src/access.ts）
@@ -229,8 +223,6 @@ DID_YOU_KNOW=none
 
 ### 路由权限
 - 异常账单监控页面需要 `admin` 权限
-
----
 
 ## 网络请求
 
@@ -250,8 +242,6 @@ DID_YOU_KNOW=none
 - 401 错误自动清除本地存储并跳转登录
 - 请求超时：20 秒
 
----
-
 ## UI/UX 设计
 
 ### 布局系统
@@ -268,8 +258,6 @@ DID_YOU_KNOW=none
 ### 右侧内容
 - 用户信息展示
 - 登出功能
-
----
 
 ## 构建与部署
 
@@ -294,50 +282,31 @@ DID_YOU_KNOW=none
 - 输出目录：`build/`
 - Hash 文件名（便于缓存）
 
----
-
 ## 相关项目
 
-- [[待建档项目索引#tpm-admin-web\|tpm-admin-web]] - TPM 管理端后台
-- [[待建档项目索引#tpm-dealer-web\|tpm-dealer-web]] - TPM 经销商端
-
----
+- [[01-导航与索引/项目维护#tpm-admin-web\|tpm-admin-web]] - TPM 管理端后台
+- [[01-导航与索引/项目维护#tpm-dealer-web\|tpm-dealer-web]] - TPM 经销商端
 
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 开发规范
 
 ### 目录规范
 
-1. **页面组件**：统一放在 `src/pages/` 目录
-2. **公共组件**：统一放在 `src/components/` 目录
-3. **服务层**：统一放在 `src/services/` 目录
-4. **工具函数**：统一放在 `src/utils/` 目录
-5. **类型定义**：统一放在 `src/typings.d.ts` 或 `services/API.d.ts`
+页面、公共组件、服务与工具目录见 [[06-研发规范/开发规范#项目结构\|项目结构规范]]；本项目类型定义放在 `src/typings.d.ts` 或 `services/API.d.ts`。
 
 ### 代码规范
 
-1. **使用 TypeScript 严格模式**
-2. **API 调用统一封装**在 `services/` 层
-3. **使用 Umi Request**：自动处理错误和 Token
-4. **遵循 Prettier 格式化规则**：
-   - 单引号
-   - 80 字符换行
-   - 尾随逗号
-   - 自动排序导入
-5. **使用 ESLint**：保持代码质量
-6. **Git Hooks**：提交前自动检查和格式化
+- 使用 TypeScript 严格模式，API 在 `services/` 层统一封装。
+- Umi Request 统一处理错误和 Token，具体行为见 [[02-Web端项目/tpm-merchant-wx#网络请求\|网络请求]]。
+- Prettier 使用单引号、80 字符换行、尾随逗号，并自动排序导入。
+- ESLint 与 Git Hooks 负责提交前检查和格式化。
 
 ### 组件规范
 
-1. **使用 Ant Design Pro Components**：ProTable、ProForm 等
-2. **使用函数式组件 + Hooks**
-3. **页面组件使用 PageContainer 包裹**
-4. **合理使用 Umi Model** 管理状态
+函数组件、Hooks 与 ProTable / ProForm 复用约定见 [[06-研发规范/React项目规范\|React项目规范]]；页面使用 PageContainer 包裹，状态由 Umi Model 管理。
 
 ### 性能优化
 
@@ -346,8 +315,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 3. **合理使用 useMemo 和 useCallback**
 4. **优化打包体积**
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -355,19 +322,14 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | - | AI 自动补充完整项目文档 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-18 #UmiJS-Max #UmiJS-4 #AntDesign-4 #AntDesignPro #TypeScript #TPM系列 #商户管理 #Web应用 #积分管理 #经销商管理 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [Umi Max 文档](https://umijs.org/docs/max/introduce)
 - [Ant Design 文档](https://ant.design/)
 - [Ant Design Pro 文档](https://pro.ant.design/)

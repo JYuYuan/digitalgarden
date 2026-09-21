@@ -1,239 +1,121 @@
 ---
-{"dg-publish":true,"permalink":"/index/","tags":["gardenEntry"],"dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/index/","hideInFiletree":true,"tags":["gardenEntry"],"dg-note-properties":{"cssclasses":["wiki-page","wiki-home"]}}
 ---
 
 
 # JNC Wiki
 
-> 企业级项目知识库 · 25 个项目 · 持续更新中
+> [!wiki-hero] 项目、规范与经验，都在这里。
+> **28 个项目 · 5 类工程**，从开发到发布的工作知识库。
+>
+> 本次补录：[[10-后端与数据项目/flink-pipline\|flink-pipline]] · [[10-后端与数据项目/redshift\|redshift]] · [[10-后端与数据项目/tpm-report-export\|tpm-report-export]]
+
+> [!wiki-stats] 项目分布
+> | Web 端 | 小程序 | 移动端 | 文档项目 | 后端与数据 |
+> | :---: | :---: | :---: | :---: | :---: |
+> | **15** | **5** | **2** | **3** | **3** |
+
+## 常用入口
+
+> [!wiki-grid] 工作导航
+> > [!compass] 开始工作
+> > - [[01-导航与索引/项目维护\|项目维护]] · 查看项目动态与升级状态
+> > - [[01-导航与索引/项目总览#快速搜索\|快速搜索]] · 按名称或标签定位内容
+> > - [[09-问题与记录/问题记录\|问题记录]] · 回查与沉淀开发问题
+>
+> > [!folder-open] 找项目
+> > - [[01-导航与索引/项目总览\|项目总览]] · 28 个项目的完整清单
+> > - [[01-导航与索引/项目关系图\|项目关系图]] · 业务关系与数据链路
+> > - [[01-导航与索引/项目总览#技术栈\|技术栈]] · 框架、版本与工具对比
+>
+> > [!code] 开发规范
+> > - [[06-研发规范/开发规范\|开发规范]] · 通用开发约定
+> > - [[06-研发规范/React项目规范\|React项目规范]] · [[06-研发规范/Umi项目开发指南\|Umi项目开发指南]]
+> > - [[06-研发规范/常用代码片段\|常用代码片段]] · 高频代码模板
+>
+> > [!rocket] 运维与发布
+> > - [[07-运维与发布/通用/Git分支规范\|Git分支规范]] · [[07-运维与发布/通用/Jenkins部署规则\|Jenkins部署规则]]
+> > - [[07-运维与发布/发布流程/小程序发版\|小程序发版]] · [[07-运维与发布/发布流程/SF直播App发布流程\|SF直播App发布流程]]
+> > - [[07-运维与发布/专项/额度池/额度池新增缺失表处理流程\|额度池新增缺失表处理流程]] · 数据链路专项
+
+## 项目入口
+
+| 平台 | 适合从这里找 | 项目入口 |
+| --- | --- | --- |
+| **Web 端 · 15** | 业务管理、订单、报表与权限 | [[02-Web端项目/andromeda-web\|andromeda-web]] · [[02-Web端项目/jnc-dms-web\|jnc-dms-web]] · [[02-Web端项目/jnc-tpm-web\|jnc-tpm-web]] · [[02-Web端项目/oms-web\|oms-web]] |
+| **小程序 · 5** | 移动销售、稽核、证据审计与自动化测试 | [[03-小程序项目/andromeda-wx\|andromeda-wx]] · [[03-小程序项目/jnc-dms-wx\|jnc-dms-wx]] · [[03-小程序项目/jnc-audit-wx\|jnc-audit-wx]] · [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] · [[03-小程序项目/wechatTest\|wechatTest]] |
+| **移动端 · 2** | Android 审计与历史双端直播工程 | [[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] · [[04-移动端项目/XiaoZhiBo\|XiaoZhiBo]] |
+| **文档项目 · 3** | 接口文档、Axure 原型与方案 | [[05-文档项目/liveup-doc\|liveup-doc]] · [[05-文档项目/7-3\|7-3]] · [[05-文档项目/8-2\|8-2]] |
+| **后端与数据 · 3** | CDC、数仓加工与报表导出 | [[10-后端与数据项目/flink-pipline\|flink-pipline]] · [[10-后端与数据项目/redshift\|redshift]] · [[10-后端与数据项目/tpm-report-export\|tpm-report-export]] |
+
+> [!tip] 查看完整清单
+> [[01-导航与索引/项目总览\|项目总览]] 提供完整清单和自动统计；[[01-导航与索引/项目维护\|项目维护]] 查看近期修改与升级待办。
+
+## 本次补录
+
+| 项目 | 用途 | 从哪里开始 |
+| --- | --- | --- |
+| [[10-后端与数据项目/flink-pipline\|flink-pipline]] | Flink CDC 作业配置与配套工具 | 数据源配置、表映射、部署约定 |
+| [[10-后端与数据项目/redshift\|redshift]] | SQL / Python 数仓与数据流水线 | 数据分层、脚本目录、额度池链路 |
+| [[10-后端与数据项目/tpm-report-export\|tpm-report-export]] | Java 报表导出服务 | 导出任务、类型映射、文件交付 |
+
+## 高频业务系统
+
+> [!wiki-grid] 业务系统
+> > [!note] Andromeda · SFA 销售自动化
+> > [[02-Web端项目/andromeda-web\|Web 管理端]] · [[03-小程序项目/andromeda-wx\|销售端小程序]]
+>
+> > [!note] TPM · 管理、审计与导出
+> > [[02-Web端项目/tpm-pc-manager\|tpm-pc-manager]] · [[02-Web端项目/jnc-tpm-web\|jnc-tpm-web]] · [[02-Web端项目/jnc-tpm-react\|jnc-tpm-react]] · [[02-Web端项目/tpm-merchant-wx\|tpm-merchant-wx]]
+> >
+> > [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] · [[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] · [[10-后端与数据项目/tpm-report-export\|tpm-report-export]]
+>
+> > [!note] DMS · 分销管理
+> > [[02-Web端项目/jnc-dms-web\|Web 管理端]] · [[03-小程序项目/jnc-dms-wx\|分销小程序]]
+>
+> > [!note] 审计 · 稽核业务
+> > [[02-Web端项目/jnc-audit-web\|审计 Web]] · [[03-小程序项目/jnc-audit-wx\|审计小程序]]
+
+## 按工作场景找文档
+
+| 现在要做的事 | 推荐路径 |
+| --- | --- |
+| **开始开发** | [[01-导航与索引/项目总览\|项目总览]] → 项目文档的启动说明 → [[06-研发规范/开发规范\|开发规范]] |
+| **发布或部署** | [[07-运维与发布/通用/Git分支规范\|Git分支规范]] → [[07-运维与发布/通用/Jenkins部署规则\|Jenkins部署规则]] → 对应发版流程 |
+| **排查问题** | [[09-问题与记录/常见问题解决方案\|常见问题解决方案]] → [[09-问题与记录/问题记录\|问题记录]] → 解决后记录 |
+| **处理数据与导出** | [[10-后端与数据项目/flink-pipline\|flink-pipline]] / [[10-后端与数据项目/redshift\|redshift]] / [[10-后端与数据项目/tpm-report-export\|tpm-report-export]] → 具体配置与任务 |
+| **维护知识库** | [[08-知识库指南/优化工作流程指南\|优化工作流程指南]] → [[08-知识库指南/Obsidian插件配置指南\|Obsidian插件配置指南]] → [[08-知识库指南/维护计划/知识库更新计划\|知识库更新计划]] |
+
+## 知识库导航图
+
+> [!info]- 展开查看目录关系
+> ```mermaid
+> flowchart LR
+>     A["JNC Wiki"] --> B["导航与索引"]
+>     A --> C["项目文档 · 28"]
+>     A --> D["研发规范"]
+>     A --> E["运维与发布"]
+>     A --> F["知识库指南 / 问题记录"]
+>     C --> C1["Web 15 / 小程序 5"]
+>     C --> C2["移动端 2 / 文档 3"]
+>     C --> C3["后端与数据 3"]
+> ```
+
+## 技术概览
+
+React / Vue / Taro 覆盖前端与跨端工程，Java / Flink / SQL / Python 覆盖服务端和数据处理。具体版本与项目映射见 [[01-导航与索引/项目总览#技术栈\|技术栈]]。
+
+## 知识库使用说明
+
+> [!info]- 内容应该放在哪里
+> - **临时笔记**：`00-收件箱`，整理后归档。
+> - **项目资料**：`02～05` 对应前端、移动端和文档项目；`10-后端与数据项目` 收录服务端与数据工程。
+> - **研发与运维**：`06-研发规范`、`07-运维与发布`。
+> - **使用指南与问题**：`08-知识库指南`、`09-问题与记录`。
+> - **敏感资料**：`99-私有`，不发布到 Web。
+>
+> 需要 AI 调用知识库时，参阅 [[08-知识库指南/知识库主动调用指南\|知识库主动调用指南]]。
 
 ---
 
-## 欢迎
-
-这是一个基于 Obsidian 构建的项目知识管理系统，涵盖 **Web 端**、**小程序**、**移动端** 和 **文档项目** 的完整技术栈和开发指南。
-
----
-
-## 快速导航
-
-<div class="nav-grid">
-
-### 核心看板
-- [[00-仪表板\|项目仪表板]] - 自动统计与快速搜索
-- [[01-索引/快速导航\|快速导航]] - 所有文档入口
-- [[01-索引/项目总览\|项目总览]] - 完整项目列表
-
-### 高优先级项目
-- [[02-Web端项目/andromeda-web\|Andromeda Web]] - React 18 + Vite 5 
-- [[03-小程序项目/andromeda-wx\|Andromeda 小程序]] - 原生 + MobX 
-
-### 技术文档
-- [[01-索引/技术栈索引\|技术栈索引]] - 技术栈对比分析
-- [[06-运维文档/Jenkins部署规则\|Jenkins 部署]] - 部署规则
-- [[06-运维文档/Git分支规范\|Git 规范]] - 分支管理规范
-
-### 开发指南
-- [[07-指南文档/优化工作流程指南\|工作流程指南]] - 日常开发流程
-- [[问题记录\|问题记录]] - 常见问题与解决方案
-- [[07-指南文档/Obsidian插件配置指南\|插件配置]] - Obsidian 使用指南
-
-</div>
-
----
-
-## 项目概览
-
-### 项目分布
-
-<div class="stats-grid">
-
-**Web 端项目**
-15 个项目
-- React 18: 6 个
-- React 17: 2 个  
-- React 16: 6 个
-- Vue 2: 1 个
-
-**小程序项目**
-5 个项目
-- 原生小程序: 1 个
-- Taro 跨端: 3 个
-- 自动化测试: 1 个
-
-**移动端项目**
-2 个项目
-- Android 原生应用: 1 个
-- iOS + Android 双端直播方案: 1 个
-
-**文档项目**
-3 个项目
-- VuePress 文档: 1 个
-- Axure 原型资料: 2 个
-
-</div>
-
----
-
-## 业务系统
-
-### Andromeda 系列 
-**SFA 销售自动化系统**
-- [[02-Web端项目/andromeda-web\|Andromeda Web]] - 管理端（React 18 + Vite 5）
-- [[03-小程序项目/andromeda-wx\|Andromeda 小程序]] - 销售端（原生 + MobX）
-
-### TPM 系列
-**第三方支付管理**
-- 6 个项目涵盖管理端、商户端、审计端
-- 深度集成腾讯云服务（IM + TRTC + VOD + COS）
-
-### 其他业务系统
-- **DMS 系列** - 分销管理系统（2 个）
-- **审计系列** - 稽核审计管理（2 个）
-- **OMS/PDM/BSS** - 订单、产品、前端系统
-- [[02-Web端项目/knowledge-map\|knowledge-map]] - 企业微信小程序跳转过渡页
-
----
-
-## 技术栈
-
-### 前端框架
-- **React 18** - 6 个项目（推荐）
-- **React 17** - 5 个项目
-- **React 16** - 6 个项目（待升级）
-- **Vue 2** - 1 个项目
-
-### 构建工具
-- **UmiJS Max 4** - 4 个项目
-- **UmiJS 3** - 5 个项目
-- **Vite 5** - 1 个项目
-- **Taro 3** - 3 个跨端小程序
-
-### UI 组件库
-- **Ant Design 5** - 最新项目
-- **Ant Design 4** - 10 个项目
-- **TDesign** - 小程序专用
-- **NutUI** - Taro 项目备选
-
-### 云服务
-- **腾讯云** - 6 个项目（IM / TRTC / VOD / COS / LiteAV）
-
----
-
-## 快速开始
-
-### 查找项目
-1. 浏览 [[01-索引/快速导航\|快速导航]]
-2. 或使用搜索：`tag:#项目名称`
-
-### 启动开发
-1. 打开对应项目文档
-2. 查看 **快速启动** 卡片
-3. 复制命令到终端执行
-
-### 记录问题
-1. 遇到问题先搜索 [[问题记录\|问题记录]]
-2. 没有找到？解决后记录下来
-3. 使用 QuickAdd 快速添加
-
----
-
-## 文档索引
-
-### 索引文档
-- [[01-索引/项目总览\|项目总览]] - 所有项目列表和统计
-- [[01-索引/技术栈索引\|技术栈索引]] - 完整技术栈对比
-- [[01-索引/项目关系图\|项目关系图]] - 项目依赖关系图
-
-### 运维文档
-- [[06-运维文档/Jenkins部署规则\|Jenkins 部署规则]] - CI/CD 配置
-- [[06-运维文档/SF直播App发布流程\|App 发布流程]] - Android 发版流程
-- [[06-运维文档/Git分支规范\|Git 分支规范]] - Git 工作流
-- [[06-运维文档/额度池新增缺失表处理流程\|额度池新增缺失表处理流程]] - FLINK CDC、历史数据、S3、Athena、Redshift、Glue、Dolphin 全链路处理
-
-### 开发指南
-- [[07-指南文档/优化工作流程指南\|工作流程指南]] - 日常开发规范
-- [[07-指南文档/Obsidian插件配置指南\|Obsidian 配置]] - 知识库使用指南
-- [[07-指南文档/知识库主动调用指南\|AI 集成指南]] - Claude Code 集成
-
----
-
-## 特色功能
-
-### 自动化仪表板
-使用 Dataview 实现自动统计和分类，无需手动维护
-
-### 智能搜索
-支持标签搜索、全文搜索、组合搜索
-
-### 问题记录系统
-快速记录和查找历史问题及解决方案
-
-### AI 集成
-与 Claude Code 深度集成，自动识别项目和推荐文档
-
----
-
-## 统计数据
-
-**项目总数：** 21 个  
-**已完善文档：** 21 个（100%）  
-**技术栈覆盖：** React / Vue / Taro / 原生小程序 / Android
-
-**技术分布：**
-- React 18: 28.6%
-- React 17: 23.8%
-- React 16: 28.6%
-- Vue 2: 4.8%
-- TypeScript: 81.0%
-- Ant Design: 66.7%
-- 腾讯云: 23.8%
-
----
-
-## 外部资源
-
-### 官方文档
-- [React](https://react.dev/) - React 官方文档
-- [Ant Design](https://ant.design/) - 企业级 UI 组件库
-- [UmiJS](https://umijs.org/) - 可扩展的企业级前端框架
-- [Taro](https://taro-docs.jd.com/) - 多端统一开发框架
-
-### 腾讯云
-- [腾讯云 IM](https://cloud.tencent.com/document/product/269) - 即时通讯
-- [腾讯云 TRTC](https://cloud.tencent.com/document/product/647) - 实时音视频
-- [腾讯云 COS](https://cloud.tencent.com/document/product/436) - 对象存储
-
----
-
-<div class="footer">
-
-**提示：** 从 [[00-仪表板\|项目仪表板]] 开始探索！
-
-**最后更新：** 2026-08-25  
-**维护者：** dompling
-
-</div>
-
----
-
-<style>
-.nav-grid {
-  display: grid;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.stats-grid {
-  display: grid;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 2px solid var(--text-faint);
-}
-</style>
+从 [[01-导航与索引/项目总览\|项目总览]] 开始工作，或按 `Cmd/Ctrl + O` 直接打开项目。 · 更新于 **2026-09-21**

@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/knowledge-map/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/knowledge-map/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # knowledge-map
 
-> 知识地图前端项目 - 企业微信小程序跳转过渡页
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> 企业微信小程序跳转过渡页：预取两类签名、注册 JS-SDK，再拉起目标小程序。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/knowledge-map#页面入口\|页面入口]] · [[02-Web端项目/knowledge-map#URL 参数\|URL 参数]] · [[02-Web端项目/knowledge-map#签名接口\|签名接口]] · [[02-Web端项目/knowledge-map#初始化与跳转时序\|跳转时序]] · [[02-Web端项目/knowledge-map#调试与排错\|排错]] · [[02-Web端项目/knowledge-map#已知风险\|验收边界]]
 
 ## 快速启动
 
@@ -158,13 +163,12 @@ type JsapiSignData = {
 
 ```mermaid
 sequenceDiagram
-    participant Caller as 调用方
     participant Page as /mini-app 页面
     participant Sign as getJsapiSign
     participant SDK as @wecom/jssdk
     participant Mini as 企业微信小程序
 
-    Caller->>Page: 打开 URL（appId/path/title/token）
+    Note over Page: 调用方打开 URL<br/>appId / path / title / token
     Page->>Page: 解析 URL 参数并设置 document.title
     par 预取企业配置
         Page->>Sign: type=apply, url, token
@@ -179,7 +183,11 @@ sequenceDiagram
     Page-->>SDK: 返回预取的 apply signature
     SDK->>Page: getAgentConfigSignature()
     Page-->>SDK: 返回预取的 agent signature
-    SDK-->>Page: config/agentConfig success
+    alt 企业微信环境
+        SDK-->>Page: agentConfig success
+    else 普通微信环境
+        SDK-->>Page: config success
+    end
     Page->>SDK: ww.launchMiniprogram({ appid, path })
     SDK->>Mini: 拉起目标小程序
     SDK-->>Page: Promise resolve / success 回调
@@ -261,7 +269,6 @@ ww.launchMiniprogram({
 7. 当前域名是否配置为该企业微信应用的可信域名。
 8. 目标小程序是否属于当前企业并已经关联工作台。
 
-
 ### 本地与远程分支表
 
 | 分支                    | 类型        | HEAD      | 上游/映射                      | 相对 `dev`                   | 最近提交                            |
@@ -277,7 +284,6 @@ ww.launchMiniprogram({
 
 > [!warning] 分支用途说明
 > `dev`、`uat`、`prod_release`、`master` 的职责是按分支命名和现有提交关系推断的，仓库内没有发现正式发布流程说明。合并或发布前应再核对团队约定和 Jenkins 流水线配置。
-
 
 ## 已知风险
 
@@ -295,9 +301,8 @@ ww.launchMiniprogram({
 
 ## 相关链接
 
-- [[01-索引/项目总览\|项目总览]]
-- [[01-索引/快速导航\|快速导航]]
-- [[01-索引/技术栈索引\|技术栈索引]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]]
+
 - [企业微信 JS-SDK npm 包](https://www.npmjs.com/package/@wecom/jssdk)
 
 ## 标签

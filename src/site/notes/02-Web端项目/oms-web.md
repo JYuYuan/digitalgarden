@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/oms-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/oms-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # oms-web
 
-> OMS 订单管理系统 Web 端 - 基于 UmiJS Max 的企业级应用
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> 订单管理后台，覆盖基础信息、订单处理、入库、出库和配送，并提供菜单与按钮权限控制。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/oms-web#快速启动\|启动]] · [[02-Web端项目/oms-web#核心功能模块\|业务模块]] · [[02-Web端项目/oms-web#配置说明\|配置]] · [[02-Web端项目/oms-web#多环境管理\|环境]] · [[02-Web端项目/oms-web#开发规范\|开发约定]] · [[02-Web端项目/oms-web#部署说明\|部署]]
 
 ## 快速启动
 
@@ -36,8 +41,6 @@ npm run build        # 生产环境构建
 - 项目设置：`npm run setup`
 - Git Hooks 安装：`npm run prepare`（自动执行）
 
----
-
 ## 项目信息
 
 - **项目名称**：oms-web
@@ -45,8 +48,6 @@ npm run build        # 生产环境构建
 - **开发状态**：#维护中
 - **作者**：Qj <4433677805@qq.com>
 - **项目路径**：`<工作区>/oms-web`
-
----
 
 ## 技术栈
 
@@ -89,8 +90,6 @@ npm run build        # 生产环境构建
 - `prettier` 2.7.1 - 代码格式化
 - `prettier-plugin-organize-imports` 2.x - 自动组织导入
 - `prettier-plugin-packagejson` 2.x - package.json 格式化
-
----
 
 ## 项目结构
 
@@ -165,7 +164,6 @@ oms-web/
 └── package.json
 ```
 
----
 
 ## 核心功能模块
 
@@ -192,8 +190,6 @@ oms-web/
 - 按钮级别的权限管理
 - 动态菜单加载
 - 权限路由守卫
-
----
 
 ## 配置说明
 
@@ -234,8 +230,6 @@ oms-web/
 - **lint-staged**：提交前自动检查和格式化
 - **husky**：Git Hooks 管理
 
----
-
 ## 多环境管理
 
 **环境配置文件：**
@@ -255,54 +249,34 @@ npm run build-dev
 npm run build
 ```
 
----
 
 ## 相关项目
 
-- [[待建档项目索引#OMS 后端服务\|OMS 后端服务]] - OMS 订单管理系统后端 API
-- [[待建档项目索引#SAC 权限系统\|SAC 权限系统]] - 统一权限管理系统
-- [[待建档项目索引#密码管理服务\|密码管理服务]] - 密码服务
-
----
+- [[01-导航与索引/项目维护#OMS 后端服务\|OMS 后端服务]] - OMS 订单管理系统后端 API
+- [[01-导航与索引/项目维护#SAC 权限系统\|SAC 权限系统]] - 统一权限管理系统
+- [[01-导航与索引/项目维护#密码管理服务\|密码管理服务]] - 密码服务
 
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 开发规范
 
 ### 页面开发
 
-1. **配置式路由**：在 `config/config.ts` 中配置路由
-2. **使用 Pro 组件**：优先使用 Ant Design Pro Components
-3. **数据流管理**：使用 UmiJS Max 的 model 管理全局状态
-4. **权限控制**：使用 `access` 插件和自定义权限组件
+路由在 `config/config.ts` 中配置；全局状态使用 UmiJS Max model，权限由 `access` 插件与自定义权限组件处理。Pro Components 的通用约定见 [[06-研发规范/React项目规范\|React项目规范]]。
 
 ### 组件开发
 
-- 公共组件放在 `src/components/` 目录
-- 页面级组件放在对应的 `pages/` 子目录
-- 组件使用函数组件 + Hooks
-- 复杂表单使用 `UseModalForm` 封装
+公共组件、函数组件与 Hooks 约定见 [[06-研发规范/React项目规范\|React项目规范]]。页面级组件放在对应 `pages/` 子目录，复杂表单复用 `UseModalForm`。
 
 ### API 服务
 
-- API 服务按模块分类在 `src/services/` 目录
-- 使用统一的 Axios 实例（`axios.ts`）
-- 使用 `requestService.ts` 封装请求方法
-- 统一错误处理和 loading 状态
+服务按业务模块放在 `src/services/`，通过统一的 `axios.ts` 实例和 `requestService.ts` 处理请求、错误与 loading 状态。
 
 ### 代码风格
 
-- 遵循 UmiJS Max 官方规范
-- 使用 TypeScript 类型约束
-- 函数组件 + Hooks 优先
-- 使用 Prettier 自动格式化
-- 提交前自动 lint 检查
-
----
+共享约定见 [[06-研发规范/Umi项目开发指南\|Umi项目开发指南]] 和 [[06-研发规范/开发规范\|开发规范]]；本项目使用 TypeScript 类型约束、Prettier 格式化，并在提交前执行 lint 检查。
 
 ## 部署说明
 
@@ -314,15 +288,13 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 - 输出目录：`dist/`
 - Hash 文件名：开启 hash 命名
 
----
-
 ## 项目统计
+
+以下为原建档时记录的规模，不代表当前仓库的实时统计。
 
 - **文件数量**：约 135 个 TS/TSX 文件
 - **代码行数**：约 6,151 行（页面代码）
 - **核心页面**：10+ 个功能模块
-
----
 
 ## 更新日志
 
@@ -332,19 +304,14 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2024-12-11 | - | 更新 Jenkinsfile 配置 |
 | 2024-11-27 | - | 更新 package.json 依赖 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-18 #UmiJS-Max #UmiJS-4 #AntDesign-5 #AntDesignPro #TypeScript #订单管理系统 #OMS #企业级应用 #权限系统 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [UmiJS Max 官方文档](https://umijs.org/docs/max/introduce)
 - [Ant Design 5 官方文档](https://ant.design/)
 - [Ant Design Pro Components](https://procomponents.ant.design/)

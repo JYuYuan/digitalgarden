@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/04/tpm-evidence-audit-android/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/04/tpm-evidence-audit-android/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # tpm-evidence-audit-android
 
-> TPM 证据审计 Android 应用 - 原生 Android 开发
+[[01-导航与索引/项目总览\|项目总览]] / 移动端项目
 
----
+> [!abstract] 项目定位
+> TPM 证据审计 Android 原生应用，支持证据采集、直播陪审和转录播；与小程序共享后端接口及 TIM / TRTC 契约。
+
+> [!wiki-nav] 本页导航
+> [[04-移动端项目/tpm-evidence-audit-android#快速启动\|构建]] · [[04-移动端项目/tpm-evidence-audit-android#配置说明\|配置]] · [[04-移动端项目/tpm-evidence-audit-android#与小程序的关联\|跨端契约]] · [[04-移动端项目/tpm-evidence-audit-android#常见问题\|排错]] · [[04-移动端项目/tpm-evidence-audit-android#构建与发布\|发布]]
 
 ## 快速启动
 
@@ -34,8 +39,6 @@ Gradle 6.0+
 
 **输出目录：** `app/build/outputs/apk/`
 
----
-
 ## 项目信息
 
 - **项目名称**：tpm-evidence-audit-android
@@ -50,8 +53,6 @@ Gradle 6.0+
 - **Target SDK**：根据 `build_versions.target_sdk` 配置
 - **Version Code**：根据 `build_versions.version_code`
 - **Version Name**：根据 `build_versions.version_name`
-
----
 
 ## 技术栈
 
@@ -112,8 +113,6 @@ Gradle 6.0+
 - `umeng` 9.3.8 - 友盟统计
 - `walle` 1.1.6 - 美团多渠道打包
 
----
-
 ## 项目结构
 
 ```text
@@ -137,7 +136,6 @@ tpm-evidence-audit-android/
 └── gradle.properties      # Gradle 配置
 ```
 
----
 
 ## 核心功能模块
 
@@ -171,8 +169,6 @@ tpm-evidence-audit-android/
 - RePlugin 插件框架
 - 动态加载插件
 - 插件独立更新
-
----
 
 ## 配置说明
 
@@ -209,15 +205,11 @@ tpm-evidence-audit-android/
 - 使用 Release 签名
 - 生成文件名：`auditOnline_v{versionCode}_{versionName}.apk`
 
----
-
 ## 环境配置
 
 **环境变量通过 YAML 配置：**
 - `app/env_config.yaml` - 环境配置文件
 - `debug` / `release` 环境
-
----
 
 ## 相关项目
 
@@ -225,11 +217,9 @@ tpm-evidence-audit-android/
 - [[02-Web端项目/jnc-audit-web\|jnc-audit-web]] - 审计 Web 端
 - [[02-Web端项目/tpm-pc-manager\|tpm-pc-manager]] - TPM PC 管理系统
 
----
-
 ## 与小程序的关联
 
-[[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] 和 [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] 是 TPM 证据审核移动端业务的两个客户端实现。Android 是原生实现，小程序是 Taro/微信容器实现；两端共享直播陪审、现场拍照、转录播、TIM 信令和 TRTC 直播契约。
+本项目与 [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] 是 TPM 证据审核移动端业务的两个客户端实现。Android 是原生实现，小程序是 Taro/微信容器实现；两端共享直播陪审、现场拍照、转录播、TIM 信令和 TRTC 直播契约。
 
 ### Android 关键实现
 
@@ -256,27 +246,11 @@ tpm-evidence-audit-android/
 
 ### 共享后端接口
 
-- 任务列表/详情：`live/app/v1/task/list/query`、`live/app/v1/task/detail/query`
-- 现场拍照：`live/app/v1/scene/{taskCode}`、`live/app/v1/scene/execute`、`live/app/v1/scene/query`、`live/app/v1/file/upload`
-- 排队：`live/app/v1/line/up`、`live/app/v1/line/cancel`、`live/app/v1/task/currentLineUpMember/query`
-- 直播前校验和签名：`live/app/v1/connected/check/{taskCode}`、`live/app/v1/im/sig/create`
-- 混流：`live/web/v1/task/mix/start`、`live/web/v1/task/mix/stop`
-- 转录播：`live/app/v1/video/refuse`、`live/app/v1/video/confirm`、`live/app/v1/video/signature/create`、`live/app/v1/video/record/save`
-- 日志：`systemDashboard/v1/log/save`
+两端的任务、拍照、排队、签名、混流、录播和日志接口统一维护在 [[07-运维与发布/专项/直播审核知识地图#接口\|直播审核接口清单]]。
 
 ### TIM/TRTC 共享契约
 
-- SDK App ID：`1400380294`
-- TRTC 用户 ID：`<当前 appUserCode>_auditUserCode<审核员 appUserCode>`
-- TRTC 房间 ID：`taskCode`
-- TRTC 流 ID：`taskCode`
-- 混流 ID：`mix_<taskCode>_<审核员 appUserCode>`
-- 混流参数：`videoFramerate: 15`、`videoBitrate: 550`
-
-共享 TIM key：
-
-- 接收：`pushUrl`、`liveStop`、`checkForm`、`msg`、`queueNumber`、`liveQueueStatus`、`fail`、`liveLine`、`grantVideoStatus`、`taskChange`、`getPushUrl`、`getLocation`、`resetLogin`
-- 发送：`msg`、`minxStart`、`playUrl`、`checkForm`、`location`、`windowSize`、`locationDistance`
+消息收发字段见 [[07-运维与发布/专项/直播审核知识地图#TIM key\|TIM key]]；SDK App ID、用户与房间标识、流 ID 和混流参数见 [[07-运维与发布/专项/直播审核知识地图#TRTC 约定\|TRTC 约定]]。两端变更共用这份契约，客户端实现差异在本页继续说明。
 
 ### 跨端改动检查点
 
@@ -285,13 +259,9 @@ tpm-evidence-audit-android/
 - Android 侧 TIM 分发按 key 全局广播，再由 Fragment 使用 `code == taskCode` 过滤；涉及串单、误消费、重入时重点检查 `IMMessageDispatcher` 和各 Fragment 的 `isInvalidMessage`。
 - Android 原生 TRTC 有 `TRTCNetworkManager` 网络质量和码率逻辑；小程序主要依赖 `trtc-wx-sdk` 与 `LivePusher` 回调。调整直播质量策略时需要分别验证两端。
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
-**已知注意事项：**
+以下为已记录的项目注意事项，具体排查与处理过程统一记录在 [[09-问题与记录/问题记录\|问题记录]]。
 
 1. **多 Dex 支持**
    - 已启用 `multiDexEnabled true`
@@ -304,8 +274,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 3. **第三方 SDK 版本**
    - 腾讯云 SDK 使用最新版本
    - 注意 API 变更
-
----
 
 ## 开发规范
 
@@ -322,8 +290,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 2. **ID 命名**：驼峰命名
 3. **图片资源**：`ic_*`, `bg_*`, `img_*`
 
----
-
 ## 构建与发布
 
 ### 多渠道打包
@@ -338,8 +304,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 - 自动上传到分发平台
 - Jenkins 集成
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -348,16 +312,10 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | - | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #移动端 #Android #Java #MVVM #腾讯云 #腾讯云IM #腾讯云TRTC #腾讯云COS #TPM系列 #证据审计 #插件化 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]

@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/andromeda-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/andromeda-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # andromeda-web
 
-> Andromeda Web 管理后台 - SFA 销售自动化系统
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> SFA 销售自动化管理后台，集中处理销售业务、BPMN 流程审批、动态表单与数据报表。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/andromeda-web#快速启动\|启动]] · [[02-Web端项目/andromeda-web#项目结构\|目录]] · [[02-Web端项目/andromeda-web#核心功能模块\|业务模块]] · [[02-Web端项目/andromeda-web#环境配置\|环境]] · [[02-Web端项目/andromeda-web#配置说明\|配置]]
 
 ## 快速启动
 
@@ -32,8 +37,6 @@ http://localhost:8000  # 默认端口根据 .env.development 配置
 - 代码修复：`npm run lint:fix`
 - 样式检查：`npm run stylelint`
 
----
-
 ## 项目信息
 
 - **项目名称**：andromeda-web
@@ -41,8 +44,6 @@ http://localhost:8000  # 默认端口根据 .env.development 配置
 - **开发状态**：#维护中
 - **版本**：v0.4.3
 - **项目路径**：`<工作区>/andromeda-web`
-
----
 
 ## 技术栈
 
@@ -80,8 +81,6 @@ http://localhost:8000  # 默认端口根据 .env.development 配置
 - `js-md5` 0.8.3 - MD5 加密
 - `jsencrypt` 3.3.2 - RSA 加密
 
----
-
 ## 项目结构
 
 ```text
@@ -109,7 +108,6 @@ andromeda-web/
 └── package.json         # 依赖管理
 ```
 
----
 
 ## 环境配置
 
@@ -134,8 +132,6 @@ andromeda-web/
 - `/sfa` → 主 API 服务
 - `/LMQ`, `/1LMQ`, `/LJ`, `/WCY`, `/LHR`, `/ZJ`, `/USERZJ` → 不同开发者后端服务
 
----
-
 ## 核心功能模块
 
 - 销售自动化管理（SFA）
@@ -145,8 +141,6 @@ andromeda-web/
 - 权限管理
 - 富文本编辑
 - Excel 导入导出
-
----
 
 ## 配置说明
 
@@ -163,19 +157,13 @@ andromeda-web/
 - `pre-commit`：提交前执行 lint-staged（自动格式化和 lint）
 - `commit-msg`：提交信息规范检查
 
----
-
 ## 相关项目
 
 - [[03-小程序项目/andromeda-wx\|andromeda-wx]] - Andromeda 微信小程序
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 更新日志
 
@@ -184,16 +172,10 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | v0.4.3 | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-18 #Vite #AntDesign-4 #AntDesign-5 #TypeScript #Zustand #Andromeda系列 #SFA销售自动化 #高优先级 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]

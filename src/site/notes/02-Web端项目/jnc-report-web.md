@@ -1,10 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-report-web/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-report-web/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-report-web
 
-> 客情报表系统 - 基于 UmiJS Max 4 + React 18 + Ant Design 5 + AntV 数据可视化的企业级报表分析平台
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
+
+> [!abstract] 项目定位
+> 客情报表分析平台，提供概览、进展、申诉调差、时效与明细查询，并对接异步导出服务。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-report-web#快速启动\|启动]] · [[02-Web端项目/jnc-report-web#核心功能模块\|报表入口]] · [[02-Web端项目/jnc-report-web#自定义组件库\|组件]] · [[02-Web端项目/jnc-report-web#CI/CD\|部署]] · [[02-Web端项目/jnc-report-web#关联项目\|导出服务]] · [[02-Web端项目/jnc-report-web#备注\|待完善项]]
 
 ## 项目信息
 
@@ -15,8 +22,6 @@
 - **技术负责人**：dompling
 - **项目路径**：`<工作区>/jnc-report-web`
 - **仓库类型**：私有仓库
-
----
 
 ## 快速启动
 
@@ -46,8 +51,6 @@ npm install
 | `npm run build:uat` | 构建 UAT 测试环境 |
 | `npm run format` | 代码格式化（Prettier） |
 | `npm run setup` / `yarn setup` | UmiJS Max 初始化设置 |
-
----
 
 ## 技术栈
 
@@ -126,8 +129,6 @@ npm install
 | lint-staged | 提交前代码检查 |
 | cross-env | 跨平台环境变量 |
 
----
-
 ## 项目结构
 
 ```
@@ -205,7 +206,6 @@ jnc-report-web/
 └── yarn.lock               # Yarn 锁文件
 ```
 
----
 
 ## 核心功能模块
 
@@ -228,8 +228,6 @@ jnc-report-web/
 - **报备明细**：`/activity_analysis/customer_sentiment_detailed_report/apply_detailed`
 - **执行明细**：`/activity_analysis/customer_sentiment_detailed_report/execution_detailed`
 - **账单明细**：`/activity_analysis/customer_sentiment_detailed_report/bill_detailed`
-
----
 
 ## 架构特性
 
@@ -264,8 +262,6 @@ jnc-report-web/
 - `hash: true`：文件名哈希，支持长期缓存
 - `esbuildMinifyIIFE: true`：IIFE 包裹压缩
 
----
-
 ## 数据可视化能力
 
 ### AntV 生态集成
@@ -276,8 +272,6 @@ jnc-report-web/
 ### 自定义图表组件
 - 位置：`src/pages/components/Chart`
 - 支持动态配置、主题适配、交互响应
-
----
 
 ## 自定义组件库
 
@@ -302,8 +296,6 @@ jnc-report-web/
 - 处理跨系统跳转
 - 统一鉴权逻辑
 
----
-
 ## CI/CD
 
 ### Jenkins Pipeline
@@ -316,66 +308,46 @@ jnc-report-web/
 - **功能分支**：`dev`
 - **构建脚本**：`build:dev`
 
----
-
 ## 开发规范
 
 ### 代码质量
-- **ESLint**：代码规范检查
-- **Prettier**：自动格式化
-- **Stylelint**：样式规范
-- **Husky + lint-staged**：提交前自动检查
+
+ESLint、Prettier、Stylelint 与 Husky / lint-staged 共同负责检查、格式化和提交前校验，工具入口见 [[02-Web端项目/jnc-report-web#技术栈\|技术栈]]。
 
 ### 组件规范
-- 函数式组件 + React Hooks
-- TypeScript 严格模式
-- ProComponents 优先
+
+函数组件、Hooks 和 ProComponents 复用约定见 [[06-研发规范/React项目规范\|React项目规范]]；本项目使用 TypeScript 严格模式。
 
 ### 命名规范
-- 组件文件：PascalCase（如 `ProTable.tsx`）
-- 工具函数：camelCase（如 `formatDate.ts`）
-- 常量：UPPER_SNAKE_CASE（如 `API_BASE_URL`）
 
----
+组件、工具函数和常量统一按 [[06-研发规范/开发规范#命名规范\|命名规范]] 命名。
 
 ## 关联项目
 
+- [[10-后端与数据项目/tpm-report-export\|tpm-report-export]] - 报表异步导出服务。`src/services/api.ts` 调用创建、查询导出任务接口，逻辑服务名为 `report-export-service`；前后端 `type` 契约见服务项目页。
+
 - [[02-Web端项目/jnc-bigdata-mgt-web\|jnc-bigdata-mgt-web]] - 数据管理平台（共享 API 基础设施）
 - [[02-Web端项目/jnc-audit-web\|jnc-audit-web]] - 审计系统
-
----
 
 ## 标签
 
 #前端 #Web端 #React-18 #UmiJS-Max #UmiJS-4 #AntDesign-5 #AntDesignPro #TypeScript #AntV #数据可视化 #报表系统 #客情分析 #企业级应用 #维护中
 
----
-
 ## 最后更新
 
 - **文档创建时间**：2026-06-15
-- **最后修改时间**：2026-06-16
+- **最后修改时间**：2026-09-21
 - **文档维护者**：Claude Code
-
----
 
 ## 备注
 
-1. **项目亮点**：
-   - 完整的客情报表分析体系（概览 → 进展 → 申诉 → 时效 → 明细）
-   - AntV 生态深度集成，支持多维数据透视
-   - 页面保活机制，优化用户体验
-   - 多环境配置，支持 dev/uat/prod 部署
-
-2. **技术债务**：
+1. **技术债务**：
    - `@alita/plugins` 的 `tabs-layout` 和 `keepalive` 功能已注释，可能存在迁移需求
    - README.md 内容过于简单，需补充业务说明
 
-3. **待完善**：
+2. **待完善**：
    - 单元测试覆盖率（未发现 `__tests__` 或 `.test.ts` 文件）
    - API 文档（services 仅有 2 个文件，可能需要 OpenAPI 生成）
-
----
 
 ## 快速查找
 

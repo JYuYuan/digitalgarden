@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/02-web/jnc-tpm-react/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/02-web/jnc-tpm-react/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # jnc-tpm-react
 
-> TPM React 项目 - 基于 React + Redux 的管理系统
+[[01-导航与索引/项目总览\|项目总览]] / Web 端项目
 
----
+> [!abstract] 项目定位
+> TPM 管理系统的 React + Redux 实现，包含商户信息、交易统计、图表和文件处理。
+
+> [!wiki-nav] 本页导航
+> [[02-Web端项目/jnc-tpm-react#快速启动\|启动]] · [[02-Web端项目/jnc-tpm-react#核心功能模块\|业务模块]] · [[02-Web端项目/jnc-tpm-react#配置说明\|配置]] · [[02-Web端项目/jnc-tpm-react#环境配置\|环境]] · [[02-Web端项目/jnc-tpm-react#开发规范\|开发约定]]
 
 ## 快速启动
 
@@ -29,17 +34,13 @@ http://localhost:3000（默认端口）
 - 运行测试：`npm test`
 - 主题配置：`npm run theme`
 
----
-
 ## 项目信息
 
 - **项目名称**：jnc-tpm-react (内部名: test)
 - **项目类型**：Web 前端应用
 - **开发状态**：#维护中
 - **版本**：v0.1.0
-- **项目路径**：`<工作区>/jnc-tpm-react`
-
----
+- **项目路径**：`<工作区>/jnc-tpm-react.`（本地目录名包含尾点）
 
 ## 技术栈
 
@@ -95,8 +96,6 @@ http://localhost:3000（默认端口）
 - `jnc-utils` 0.2.13 - 剑南春工具库
 - `json-bigint` 0.3.0 - 大整数处理
 
----
-
 ## 项目结构
 
 ```text
@@ -117,7 +116,6 @@ jnc-tpm-react./
 └── package.json
 ```
 
----
 
 ## 核心功能模块
 
@@ -141,8 +139,6 @@ jnc-tpm-react./
 - 文件上传（腾讯云 COS / AWS S3）
 - 图片预览
 
----
-
 ## 配置说明
 
 ### Webpack 配置
@@ -165,14 +161,10 @@ jnc-tpm-react./
 
 运行 `npm run theme` 可以自定义 Ant Design 主题。
 
----
-
 ## 环境配置
 
 **代理配置：**
 - 开发环境代理：`http://52.83.134.63`（在 package.json 中配置）
-
----
 
 ## 相关项目
 
@@ -180,29 +172,19 @@ jnc-tpm-react./
 - [[02-Web端项目/jnc-tpm-web\|jnc-tpm-web]] - TPM Web 端（UmiJS 版本）
 - [[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] - TPM 证据审计小程序
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
----
+_暂无记录。遇到问题后会记录在 [[09-问题与记录/问题记录\|问题记录]] 中。_
 
 ## 开发规范
 
 ### 组件开发
 
-1. **使用 React Hooks**
-2. **Props 类型检查**（可选 TypeScript）
-3. **样式使用 Less**
+组件与 Props 的通用约定见 [[06-研发规范/React项目规范\|React项目规范]]；本项目样式使用 Less，TypeScript 仍按既有模块选择使用。
 
 ### 状态管理
 
-1. **Redux + Redux Thunk**
-2. **模块化 reducer**
-3. **异步操作统一封装**
-
----
+沿用 Redux + Redux Thunk；reducer 按模块拆分，异步操作统一封装。
 
 ## 更新日志
 
@@ -211,16 +193,10 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | v0.1.0 | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #前端 #Web端 #React-16 #Webpack #AntDesign-4 #Redux #腾讯云 #腾讯云COS #TPM系列 #支付管理 #ECharts #需要升级 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]

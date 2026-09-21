@@ -1,12 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/03/tpm-evidence-audit-wxapp/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/03/tpm-evidence-audit-wxapp/","dg-note-properties":{"cssclasses":["wiki-page","wiki-project"]}}
 ---
+
 
 # tpm-evidence-audit-wxapp
 
-> TPM 证据审计微信小程序 - 基于 Taro 的跨端应用
+[[01-导航与索引/项目总览\|项目总览]] / 小程序项目
 
----
+> [!abstract] 项目定位
+> TPM 证据审计小程序，支持证据采集、直播陪审和转录播；与 Android 客户端共享后端接口及 TIM / TRTC 契约。
+
+> [!wiki-nav] 本页导航
+> [[03-小程序项目/tpm-evidence-audit-wxapp#快速启动\|启动]] · [[03-小程序项目/tpm-evidence-audit-wxapp#核心功能模块\|能力模块]] · [[03-小程序项目/tpm-evidence-audit-wxapp#配置说明\|配置]] · [[03-小程序项目/tpm-evidence-audit-wxapp#与 Android App 的关联\|跨端契约]] · [[03-小程序项目/tpm-evidence-audit-wxapp#常见问题\|排错]]
 
 ## 快速启动
 
@@ -33,8 +38,6 @@ npm run build:upload
 **打开项目：**
 使用微信开发者工具打开 `dist/` 目录
 
----
-
 ## 项目信息
 
 - **项目名称**：tpm-evidence-audit-wxapp (内部名: live-miniapp)
@@ -43,8 +46,6 @@ npm run build:upload
 - **版本**：v1.0.0
 - **支持平台**：微信小程序（主）、支付宝、百度、字节跳动等
 - **项目路径**：`<工作区>/tpm-evidence-audit-wxapp`
-
----
 
 ## 技术栈
 
@@ -78,8 +79,6 @@ npm run build:upload
 - `md5-node` 1.0.1 - MD5 加密
 - `rc-field-form` 2.2.1 - 表单管理
 
----
-
 ## 项目结构
 
 ```text
@@ -102,7 +101,6 @@ tpm-evidence-audit-wxapp/
 └── package.json
 ```
 
----
 
 ## 核心功能模块
 
@@ -129,8 +127,6 @@ tpm-evidence-audit-wxapp/
 - 实时音视频（TRTC）
 - 在线客服
 
----
-
 ## 配置说明
 
 ### Taro 配置
@@ -154,15 +150,11 @@ Taro 3.x 采用 React 语法，统一编译到各小程序平台：
 - 使用 Taro 组件库保证跨端一致性
 - 平台差异通过 `process.env.TARO_ENV` 判断
 
----
-
 ## 环境配置
 
 **环境变量：**
 - `NODE_ENV` - 构建环境（development/production）
 - `TARO_ENV` - 目标平台（weapp/alipay/swan 等）
-
----
 
 ## 相关项目
 
@@ -170,11 +162,9 @@ Taro 3.x 采用 React 语法，统一编译到各小程序平台：
 - [[02-Web端项目/jnc-audit-web\|jnc-audit-web]] - 审计 Web 端
 - [[02-Web端项目/jnc-tpm-web\|jnc-tpm-web]] - TPM Web 端
 
----
-
 ## 与 Android App 的关联
 
-[[03-小程序项目/tpm-evidence-audit-wxapp\|tpm-evidence-audit-wxapp]] 和 [[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] 是 TPM 证据审核移动端业务的两个客户端实现。两端重点共享 `liveFollow` 直播陪审、现场拍照、转录播、TIM 信令和 TRTC 直播流程。
+本项目与 [[04-移动端项目/tpm-evidence-audit-android\|tpm-evidence-audit-android]] 是 TPM 证据审核移动端业务的两个客户端实现。两端重点共享 `liveFollow` 直播陪审、现场拍照、转录播、TIM 信令和 TRTC 直播流程。
 
 ### 业务流程对应
 
@@ -188,31 +178,13 @@ Taro 3.x 采用 React 语法，统一编译到各小程序平台：
 
 ### 共享后端接口
 
-两端使用同一批 TPM 直播审核接口：
-
-- 任务列表/详情：`live/app/v1/task/list/query`、`live/app/v1/task/detail/query`
-- 现场拍照：`live/app/v1/scene/{taskCode}`、`live/app/v1/scene/execute`、`live/app/v1/scene/query`、`live/app/v1/file/upload`
-- 排队：`live/app/v1/line/up`、`live/app/v1/line/cancel`、`live/app/v1/task/currentLineUpMember/query`
-- 直播前校验和签名：`live/app/v1/connected/check/{taskCode}`、`live/app/v1/im/sig/create`
-- 混流：`live/web/v1/task/mix/start`、`live/web/v1/task/mix/stop`
-- 转录播：`live/app/v1/video/refuse`、`live/app/v1/video/confirm`、`live/app/v1/video/signature/create`、`live/app/v1/video/record/save`
-- 日志：`systemDashboard/v1/log/save`
+两端的任务、拍照、排队、签名、混流、录播和日志接口统一维护在 [[07-运维与发布/专项/直播审核知识地图#接口\|直播审核接口清单]]。
 
 小程序接口主要在 `src/services/task.ts`、`src/services/live.ts`、`src/services/videotape.ts`、`src/services/api.ts`；Android 对应在 `app/src/main/java/com/jnc/audit/http/api/TaskApi.java`、`LoginApi.java`、`TakePicture.java`、`RecordExecuteApi.java`。
 
 ### TIM/TRTC 共享契约
 
-- SDK App ID：`1400380294`
-- TRTC 用户 ID：`<当前 appUserCode>_auditUserCode<审核员 appUserCode>`
-- TRTC 房间 ID：`taskCode`
-- TRTC 流 ID：`taskCode`
-- 混流 ID：`mix_<taskCode>_<审核员 appUserCode>`
-- 混流参数：`videoFramerate: 15`、`videoBitrate: 550`
-
-两端共享 TIM key：
-
-- 接收：`pushUrl`、`liveStop`、`checkForm`、`msg`、`queueNumber`、`liveQueueStatus`、`fail`、`liveLine`、`grantVideoStatus`、`taskChange`、`getPushUrl`、`getLocation`、`resetLogin`
-- 发送：`msg`、`minxStart`、`playUrl`、`checkForm`、`location`、`windowSize`、`locationDistance`
+消息收发字段见 [[07-运维与发布/专项/直播审核知识地图#TIM key\|TIM key]]；SDK App ID、用户与房间标识、流 ID 和混流参数见 [[07-运维与发布/专项/直播审核知识地图#TRTC 约定\|TRTC 约定]]。两端变更共用这份契约，客户端实现差异在本页继续说明。
 
 ### 实现差异
 
@@ -228,13 +200,9 @@ Taro 3.x 采用 React 语法，统一编译到各小程序平台：
 - 修复任务号误消费、跨页面消息串扰或直播重入时，小程序查 `src/utils/tim.ts` 和页面 `setTIMListener`，Android 查 `IMMessageDispatcher` 和各 Fragment 的 `isInvalidMessage`。
 - 调整直播画面、音频、混流或断网策略时，小程序查 `src/components/trtc-room/index.tsx` 和 `liveRoom.tsx`，Android 查 `VideoCallCallingFragment` 和 `TRTCNetworkManager`。
 
----
-
 ## 常见问题
 
-_暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中。_
-
-**已知注意事项：**
+以下为已记录的项目注意事项，具体排查与处理过程统一记录在 [[09-问题与记录/问题记录\|问题记录]]。
 
 1. **腾讯云 SDK 版本**
    - 必须使用小程序版 SDK（`-wx` 后缀）
@@ -243,8 +211,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 2. **Taro 3.x 限制**
    - 部分 React API 不支持
    - 小程序原生 API 需通过 `Taro.xxx` 调用
-
----
 
 ## 开发规范
 
@@ -261,8 +227,6 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 2. **条件编译**：`process.env.TARO_ENV === 'weapp'`
 3. **API 兼容**：使用 Taro 封装的 API
 
----
-
 ## 更新日志
 
 | 日期 | 版本 | 描述 |
@@ -271,18 +235,13 @@ _暂无记录。遇到问题后会记录在 [[问题记录\|问题记录]] 中�
 | 2026-06-16 | v1.0.0 | AI 自动补充项目文档信息 |
 | 2026-06-15 | - | 创建知识库文档 |
 
----
-
 ## 标签
 
 #小程序 #微信小程序 #跨端小程序 #React-17 #Taro #TaroUI #Redux #TypeScript #腾讯云 #腾讯云IM #腾讯云TRTC #腾讯云COS #TPM系列 #证据审计 #维护中
 
----
-
 ## 相关链接
 
-- [[01-索引/技术栈索引\|技术栈索引]]
-- [[01-索引/项目总览\|项目总览]]
-- [[问题记录\|问题记录]]
+[[01-导航与索引/项目总览#技术栈\|技术栈]] · [[09-问题与记录/问题记录\|问题记录]]
+
 - [Taro 官方文档](https://taro-docs.jd.com/)
 - [Taro UI 文档](https://taro-ui.jd.com/)
