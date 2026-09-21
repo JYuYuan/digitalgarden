@@ -156,10 +156,10 @@ uat/feature
 @Library('shared-pipeline-library') _
 ReactCI {
   jenkins_node = 'k8s-agent-react'
-  k8s_namespace = 'app-dev'                # 开发命名空间
+  k8s_namespace = 'app-dev'                // 开发命名空间
   k8s_application_name = 'my-app'
   replicas = '1'
-  feature_branch_name = 'dev'              # dev 分支可部署
+  feature_branch_name = 'dev'              // dev 分支可部署
 }
 ```
 
@@ -175,8 +175,8 @@ ReactCI {
   k8s_application_name = 'my-app'
   replicas = '1'
   feature_branch_name = 'dev'
-  build_script = 'build:dev'               # 执行 npm run build:dev
-  node_version = '16.14.2'                 # 使用 Node 16.14.2
+  build_script = 'build:dev'               // 执行 npm run build:dev
+  node_version = '16.14.2'                 // 使用 Node 16.14.2
 }
 ```
 
@@ -188,11 +188,11 @@ ReactCI {
 @Library('shared-pipeline-library') _
 ReactCI {
   jenkins_node = 'k8s-agent-react'
-  k8s_namespace = 'app-test'               # 测试命名空间
+  k8s_namespace = 'app-test'               // 测试命名空间
   k8s_application_name = 'my-app'
   replicas = '2'
-  feature_branch_name = 'test'             # test 分支可部署（不要用 uat）
-  build_script = 'build:test'              # 执行 npm run build:test
+  feature_branch_name = 'test'             // test 分支可部署（不要用 uat）
+  build_script = 'build:test'              // 执行 npm run build:test
 }
 ```
 
@@ -206,12 +206,12 @@ ReactCI {
 @Library('shared-pipeline-library') _
 ReactCI {
   jenkins_node = 'k8s-agent-react'
-  k8s_namespace = 'app-prod'               # 生产命名空间
+  k8s_namespace = 'app-prod'               // 生产命名空间
   k8s_application_name = 'my-app'
   replicas = '3'
-  feature_branch_name = 'master'           # master 分支可部署
-  build_script = 'build:prod'              # 执行 npm run build:prod
-  node_version = '16.14.2'                 # 生产环境固定 Node 版本
+  feature_branch_name = 'master'           // master 分支可部署
+  build_script = 'build:prod'              // 执行 npm run build:prod
+  node_version = '16.14.2'                 // 生产环境固定 Node 版本
 }
 ```
 
@@ -226,7 +226,7 @@ ReactCI {
   k8s_namespace = 'app-prod'
   k8s_application_name = 'my-app'
   replicas = '3'
-  feature_branch_name = 'hotfix/payment-bug'  # 允许此分支直接部署
+  feature_branch_name = 'hotfix/payment-bug'  // 允许此分支直接部署
   build_script = 'build:prod'
   node_version = '16.14.2'
 }

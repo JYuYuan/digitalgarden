@@ -36,8 +36,8 @@ python3 run.py --env prod
 # 指定测试套件与 Minium 配置
 python3 run.py --suite config/tpm-suite.json --config config/config.json
 
-# 指定单个测试文件
-python3 run.py --file <test-file>
+# 指定单个测试文件：将 <test-file> 替换为实际路径
+python3 run.py --file "<test-file>"
 
 # 启用 GUI
 python3 run.py --gui
