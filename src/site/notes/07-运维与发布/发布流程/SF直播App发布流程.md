@@ -19,9 +19,7 @@
 ### 生产环境（Production）
 
 **访问地址：**
-```
-https://sf-banq.jncapp.cn/banquet/
-```
+https://sf-banq.jncapp.cn/banquet
 
 
 ---
@@ -29,9 +27,7 @@ https://sf-banq.jncapp.cn/banquet/
 ### UAT 环境（User Acceptance Testing）
 
 **访问地址：**
-```
-https://sf-uat.jncapp.com/banquet/login/index
-```
+<https://sf-uat.jncapp.com/banquet/login/index>
 
 **登录账号：**
 - 账号：`test`
@@ -117,7 +113,7 @@ git push origin master --tags
 
 **生产环境：**
 1. 打开浏览器
-2. 访问：https://sf-banq.jncapp.cn/banquet/
+2. 访问：()
 3. 输入账号：`jncoperator`
 4. 输入密码：`Fyp@134679`
 5. 点击登录
