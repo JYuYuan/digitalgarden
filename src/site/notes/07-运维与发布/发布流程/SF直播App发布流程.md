@@ -62,28 +62,29 @@ https://sf-uat.jncapp.com/banquet/login/index
 **修改内容：**
 ```gradle
 // 版本号配置（360 RePlugin）
-build_versions.version_code = 130       // 版本代码（每次递增 10）
-build_versions.version_name = "1.0.130" // 版本名称（与 JAR 包对应）
+build_versions.version_code = 13       // 版本代码（每次递增）
+build_versions.version_name = "1.0.13" // 版本名称（与 JAR 包对应）
 ```
 
 **版本号规则：**
 
-| 项目 | 说明 | 示例 |
-|------|------|------|
-| **version_code** | 版本代码，纯数字，每次递增 10 | 100 → 110 → 120 |
-| **version_name** | 版本名称，语义化版本 | "1.0.100" → "1.0.110" |
-| **JAR 包名** | 与 version_code 对应 | 100.jar、110.jar |
+| 项目               | 说明                  | 示例                 |
+| ---------------- | ------------------- | ------------------ |
+| **version_code** | 版本代码，纯数字，每次递增       | 10 → 11→ 12        |
+| **version_name** | 版本名称，语义化版本          | "1.0.1" → "1.0.11" |
+| **JAR 包名**       | 与 version_code 对应   | 10.jar、11.jar      |
+| **提交 JAR**       | `version_code` x 10 | 100                |
 
 **示例：**
 
 **发布版本 110 时：**
 ```gradle
 // 1. 修改 sf.gradle
-build_versions.version_code = 110      // 从 100 改为 110
-build_versions.version_name = "1.0.110" // 从 1.0.100 改为 1.0.110
+build_versions.version_code = 11      // 从 10 改为 11
+build_versions.version_name = "1.0.11" // 从 1.0.10 改为 1.0.11
 
-// 2. 构建 JAR 包（会生成 110.jar）
-// 3. 上传 110.jar 到后台
+// 2. 构建 JAR 包（会生成 11.jar）
+// 3. 上传 11.jar 到后台
 // 4. 填写版本号：110
 ```
 
@@ -92,14 +93,14 @@ build_versions.version_name = "1.0.110" // 从 1.0.100 改为 1.0.110
 **检查清单：**
 - [ ] 已修改 `build_versions.version_code`
 - [ ] 已修改 `build_versions.version_name`
-- [ ] 数字版本号 = 当前版本号 + 10（例如 100 → 110）
+- [ ] 数字版本号 = 当前版本号 x 10（例如 10 → 100）
 - [ ] 提交代码并打 Tag（可选）
 
 ```bash
 # 提交版本号变更（可选）
 git add versions.gradle
-git commit -m "chore: bump version to 1.0.110"
-git tag v1.0.110
+git commit -m "chore: bump version to 1.0.11"
+git tag v1.0.11
 git push origin master --tags
 ```
 
@@ -149,10 +150,10 @@ app/build/outputs/apk/release/130.jar
 版本号.jar
 
 示例：
-100.jar    # 版本 100
-110.jar    # 版本 110
-120.jar    # 版本 120
-130.jar    # 版本 130
+10.jar    # 版本 100
+11.jar    # 版本 110
+12.jar    # 版本 120
+13.jar    # 版本 130
 ```
 
 上传文件必须使用 `app/build/outputs/apk/release/` 下的 release 产物，命名与版本号对应关系见 [[07-运维与发布/发布流程/SF直播App发布流程#步骤 0：修改版本号（发版前必做）\|#步骤 0：修改版本号（发版前必做）]]。
@@ -160,9 +161,9 @@ app/build/outputs/apk/release/130.jar
 **示例：**
 ```bash
 # 正确的命名
-100.jar  # 正确
-110.jar  # 正确
-120.jar  # 正确
+10.jar  # 正确
+11.jar  # 正确
+12.jar  # 正确
 
 # 错误的命名
 v100.jar      # 错误：不能有字母前缀
@@ -183,7 +184,7 @@ app-100.jar   # 错误：不能有其他字符
 
 2. **上传文件**
    - 点击【选择文件】或拖拽文件
-   - 选择准备好的 `.jar` 文件（如 `100.jar`）
+   - 选择准备好的 `.jar` 文件（如 `10.jar`）
    - 等待上传完成
 
 3. **填写版本信息**
